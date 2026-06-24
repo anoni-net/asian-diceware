@@ -55,3 +55,5 @@ project aims to follow semantic versioning once it reaches v1.0.
   loanword curation done (T2); the 160-pin set is frozen and dictionary-verified.
 - **v0.3**：7776 詞表品質強化（移除約 2,600 雜訊字、`wla` 稽核通過）。
   fill quality-hardened (~2,600 junk words removed; `wla` audit passes).
+- **v0.3.1**：`boba`（波霸/珍奶，台灣發源）升為 pin，補強台灣味；pin 數 160 → 161。
+  promote `boba` (bubble tea, originated in Taiwan) to a pin; 160 → 161 pins.

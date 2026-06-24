@@ -131,6 +131,7 @@ block
 blood
 blue
 board
+boba
 body
 bonsai
 book
@@ -1227,7 +1228,6 @@ via
 video
 view
 village
-violence
 visit
 voice
 volume

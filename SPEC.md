@@ -1,7 +1,7 @@
 # SPEC.md — asian-diceware
 
 **Status:** v0.3 implemented (as of 2026-06-25). Pipeline + S1-S8 tests green and
-the `wla` external audit passes. The 160-word pin set is frozen and dictionary-
+the `wla` external audit passes. The 161-word pin set is frozen and dictionary-
 verified, and the 7,776-word frequency fill has been quality-hardened (proper
 nouns, acronyms, slang, and junk removed; every final word reviewed). Remaining
 work toward v1.0 is tracked in §9 / §10. Began as a pre-implementation handoff
