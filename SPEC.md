@@ -1,6 +1,9 @@
 # SPEC.md — asian-diceware
 
-**Status:** handoff spec, v0 (pre-implementation)
+**Status:** v0.2 implemented (as of 2026-06-24). Pipeline + S1-S8 tests green;
+the 160-word pin set is frozen and dictionary-verified. Remaining work toward
+v1.0 is tracked in §9 / §10. Began as a pre-implementation handoff spec; kept as
+the living design reference.
 **Audience:** an implementer (human or Claude Code) starting from an empty repo.
 **This file is self-contained.** You do not need to read any external research
 report to implement the project. Everything required is here.
@@ -253,33 +256,41 @@ index 7775 → `66666`).
 
 ## 9. Task breakdown (implementation order)
 
-- [ ] **T1** Repo skeleton: `pyproject.toml`, ruff+pytest CI, LICENSE(-DATA),
-      empty module files, `data/`, `output/`.
-- [ ] **T2** Verify `loanwords_seed.csv`: for each `pin`/`hold` row, confirm the
-      claimed dictionary entry; flip `hold`→`pin`/`exclude`; resolve every
-      `check`. Goal: a clean pin set of ~120–180 words. **Human/curator task.**
-- [ ] **T3** `collect.py`: load freq source(s) + seed CSV → `candidates.csv`.
-- [ ] **T4** `normalize.py`: case/ASCII/NFC/length filters (§5.2).
-- [ ] **T5** `filter_quality.py`: badwords + hard-spell + homophone + proper-noun
-      (with pin exemption from proper-noun only).
-- [ ] **T6** `prune.py`: uniquely-decodable pruning with P protected (§5.1,
-      option A). Fail loudly on pinned–pinned collision.
-- [ ] **T7** `assemble.py`: pin P, fill by frequency to exactly 7776.
-- [ ] **T8** `validate.py` + `tests/`: S1–S8 all green; fix the `test_entropy`
-      pattern per §2.
-- [ ] **T9** Emit outputs: plain list, `_dice.txt`, optional PDF; `audit.sh`
-      wraps `wla` and the run must pass.
-- [ ] **T10** README / CONTRIBUTING / CHANGELOG; tag **v1.0**.
+- [x] **T1** Repo skeleton: `pyproject.toml`, ruff+pytest config, MIT `LICENSE`
+      + CC-BY-4.0 `LICENSE-DATA`, all module files, `data/`, `output/`. (CI
+      runner not yet wired — pending a remote; ruff + pytest run locally.)
+- [x] **T2** `loanwords_seed.csv` verified: all **160 pins** confirmed against
+      live OED/MW/Cambridge entries and flagged `verified`; +71 dictionary-
+      attested pins added, balanced across languages; pin set frozen at 160
+      (within the ~120–180 target). 65 candidates parked as `hold` for review.
+- [x] **T3** `collect.py`: load vendored freq snapshot + seed CSV → `candidates.csv`.
+- [x] **T4** `normalize.py`: case/ASCII/NFC/length filters.
+- [x] **T5** `filter_quality.py`: badwords + homophone/hard-spell + proper-noun
+      (pins exempt from the latter two, not from badwords). Homophone/proper-noun
+      lists are functional starter sets, extensible in future curation.
+- [x] **T6** `prune.py`: prefix-free pruning with P protected (§5.1, option A,
+      trie-based). Fails loudly on pinned–pinned collision (covered by a test).
+- [x] **T7** `assemble.py`: pin P, fill by frequency to exactly the target.
+- [x] **T8** `validate.py` + `tests/`: S1–S8 green (13 tests); `test_entropy`
+      follows the §2 pattern (assert count, then derive entropy).
+- [~] **T9** Outputs: plain list + `_dice.txt` produced for 1296 and 7776;
+      `audit.sh` wraps `wla` (skips gracefully if absent). PENDING: install
+      cargo + run the `wla` external audit; optional PDF.
+- [~] **T10** README / CONTRIBUTING / CHANGELOG done (bilingual zh-TW + English).
+      Tagged **v0.2** (PGP-signed). PENDING: v1.0 tag once T9 + release land.
 
 ---
 
 ## 10. Milestones
 
-- **v0.1** pipeline runs end-to-end producing a small list (e.g. 1296 words,
-  4 dice) + passing tests — proves the methodology.
-- **v0.2** loanword curation done (T2); pin set frozen.
-- **v1.0** full 7776 list, all tests green, `wla` audit passes, docs + license,
-  dice + (optional) PDF outputs, published CC-BY.
+- **v0.1 — ✅ done.** Pipeline runs end-to-end producing a small list (1296
+  words, 4 dice) + passing tests — methodology proven.
+- **v0.2 — ✅ done (tagged, PGP-signed).** Loanword curation complete (T2); the
+  160-pin set is frozen and dictionary-verified. The full 7776 list also builds
+  and passes S1–S8.
+- **v1.0 — in progress.** Remaining: `wla` external audit passes, (optional) PDF,
+  set a remote + publish CC-BY, tag v1.0. The 7776 list already passes all
+  S1–S8 plus the advisory loanword-share band.
 - **v1.x** usability feedback, loanword-share tuning, AnonTicket integration test.
 
 ---
@@ -298,11 +309,14 @@ index 7775 → `66666`).
 
 ## 12. Caveats carried into implementation
 
-- Dictionary backing in `loanwords_seed.csv` is **claimed, not yet verified
-  per-word** — T2 must confirm each pinned word against a real dictionary entry.
-- OED/MW "addition year" claims (Korean 2021-09/2024-12, Japanese 2024-03) come
-  from editorial articles and may not match the live entry; verify.
-- `tidy`/`wla` flag names must be confirmed against the installed version.
-- Sandbox network is allowlisted; vendor all source data into `data/sources/`
-  for offline reproducibility.
-- Keep the pin set well under 7776 so assembly always has fill room.
+- ✅ RESOLVED (T2, 2026-06-24): dictionary backing is no longer just "claimed" —
+  all 160 pins were verified per-word against live OED/MW/Cambridge entries and
+  flagged `verified` in `loanwords_seed.csv`.
+- ✅ Addressed: the OED "addition year" claims (Korean 2021-09 / 2024-12 batches)
+  were re-checked against live entries during T2.
+- `wla` is not yet installed/run (cargo absent here); the build uses the
+  Python-side prune + audit (§6 option A). NOTE: the system `/usr/bin/tidy` is
+  HTML Tidy, NOT sts10/tidy — do not use it. Confirm `wla` flags when run.
+- Sandbox network is allowlisted; all source data is vendored into
+  `data/sources/` (freq snapshot + badwords) for offline reproducibility.
+- Pin set is kept well under 7776 (160) so assembly always has fill room.
