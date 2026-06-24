@@ -30,9 +30,19 @@ project aims to follow semantic versioning once it reaches v1.0.
 - 驗收測試 S1–S8（`tests/test_wordlist.py`）＋ pipeline 行為測試
   （`tests/test_pipeline.py`）。
 - `scripts/run_pipeline.sh`、`scripts/audit.sh`、`scripts/gen_freq_snapshot.py`。
+- **T2 完成 / Loanword verification (T2)**：原始 89 個 pin 全部逐字對
+  OED/MW/Cambridge 的「實際條目」查證通過（無一需改拼法或降級），解除 SPEC §12
+  的「字典背書未驗證」caveat。全部 160 個 pin 的 `dict` 改記實際查到的字典、
+  `flags` 標注 `verified`，並補上 headword 細節（如 `kimchi`／`ketchup` 為
+  MW headword，`kimchee`／`catsup` 為變體；`veranda` 為主 headword）。
+  All 89 original pins verified against live OED/MW/Cambridge entries (none needed
+  spelling changes or demotion); the full 160-pin set is now dictionary-verified
+  and frozen.
 
 ### 里程碑 / Milestone
 - **v0.1**：pipeline 端到端跑出一份 1296 字（4 顆骰）詞表，全部驗收測試通過，
   證明方法論可行。
   pipeline runs end to end producing a 1296-word (4-dice) list with all
   acceptance tests green — proves the methodology.
+- **v0.2**：外來語策展完成、pin 集凍結（160 個皆字典查證）。
+  loanword curation done (T2); the 160-pin set is frozen and dictionary-verified.

@@ -28,64 +28,64 @@ word,lang,length,dict,flags,decision,notes
 # ============================================================================
 
 # ---- Japanese (ja) : clean single-token, generally OED/MW backed ----
-tofu,ja,4,mw,clean,pin,
-miso,ja,4,mw,clean,pin,
-sushi,ja,5,oed,clean,pin,
-sashimi,ja,7,oed,clean,pin,
-ramen,ja,5,mw,clean,pin,
-udon,ja,4,mw,clean,pin,
-wasabi,ja,6,mw,clean,pin,
-tempura,ja,7,oed,clean,pin,
-bento,ja,5,mw,clean,pin,
-mochi,ja,5,mw,clean,pin,
+tofu,ja,4,mw,verified,pin,
+miso,ja,4,mw,verified,pin,
+sushi,ja,5,mw,verified,pin,
+sashimi,ja,7,mw,verified,pin,
+ramen,ja,5,mw,verified,pin,
+udon,ja,4,mw,verified,pin,
+wasabi,ja,6,mw,verified,pin,
+tempura,ja,7,mw,verified,pin,
+bento,ja,5,camb,verified,pin,standalone headword in cambridge (mw lists only bento box)
+mochi,ja,5,mw,verified,pin,
 sake,ja,4,oed,variant,hold,homograph with English "sake" (for the sake of) — may confuse; consider exclude
-katana,ja,6,mw,clean,pin,
-tatami,ja,6,oed,clean,pin,
-shogun,ja,6,oed,clean,pin,
-samurai,ja,7,oed,clean,pin,
-bonsai,ja,6,oed,clean,pin,
-origami,ja,7,oed,clean,pin,
-karaoke,ja,7,oed,clean,pin,
-tsunami,ja,7,oed,clean,pin,
-futon,ja,5,oed,clean,pin,
-kimono,ja,6,oed,clean,pin,
-ninja,ja,5,oed,clean,pin,
-judo,ja,4,oed,clean,pin,
-karate,ja,6,oed,clean,pin,
-sudoku,ja,6,oed,clean,pin,
-manga,ja,5,oed,clean,pin,
-anime,ja,5,oed,clean,pin,
-emoji,ja,5,oed,clean,pin,
-tycoon,ja,6,oed,clean,pin,
-honcho,ja,6,mw,clean,pin,
-zen,ja,3,oed,short,pin,3 letters but very recognizable
-haiku,ja,5,oed,clean,pin,
-geisha,ja,6,oed,clean,pin,
-sensei,ja,6,oed,clean,pin,
-sumo,ja,4,oed,clean,pin,
-umami,ja,5,oed,clean,pin,
-teriyaki,ja,8,mw,clean,pin,
+katana,ja,6,mw,verified,pin,
+tatami,ja,6,mw|camb,verified,pin,
+shogun,ja,6,mw,verified,pin,common noun headword also famous as book/TV title
+samurai,ja,7,mw|camb,verified,pin,
+bonsai,ja,6,mw|camb,verified,pin,
+origami,ja,7,mw|camb,verified,pin,
+karaoke,ja,7,mw|camb,verified,pin,
+tsunami,ja,7,mw|camb,verified,pin,
+futon,ja,5,mw|camb,verified,pin,
+kimono,ja,6,mw,verified,pin,
+ninja,ja,5,mw|camb|oed,verified,pin,
+judo,ja,4,mw|camb,verified,pin,
+karate,ja,6,mw|camb,verified,pin,
+sudoku,ja,6,mw|camb,verified,pin,
+manga,ja,5,mw,verified,pin,
+anime,ja,5,mw,verified,pin,
+emoji,ja,5,mw,verified,pin,
+tycoon,ja,6,mw,verified,pin,
+honcho,ja,6,mw,verified,pin,
+zen,ja,3,mw,short|verified,pin,3 letters but very recognizable; headword capitalized Zen but lowercase adjective/noun sense recognized
+haiku,ja,5,mw,verified,pin,
+geisha,ja,6,mw,verified,pin,
+sensei,ja,6,mw,verified,pin,
+sumo,ja,4,mw,verified,pin,
+umami,ja,5,mw,verified,pin,
+teriyaki,ja,8,mw,verified,pin,
 edamame,ja,7,mw,check,hold,confirm OED/MW entry
 wagyu,ja,5,mw,check,hold,confirm MW entry
-rickshaw,ja,8,oed,clean,pin,
-skosh,ja,5,mw,clean,pin,from sukoshi; MW backed
-koi,ja,3,mw,short,pin,3 letters
+rickshaw,ja,8,mw,verified,pin,rickshaw is primary headword; ricksha is a variant
+skosh,ja,5,mw,verified,pin,from sukoshi; MW backed
+koi,ja,3,mw,short|verified,pin,3 letters; clean fish headword no homograph or offensive issue
 sake_drink,ja,4,oed,variant,exclude,duplicate of sake row — placeholder, do not use
 tonkotsu,ja,8,oed,check,hold,OED 2024-03 addition — verify
 donburi,ja,7,oed,check,hold,OED 2024-03 addition — verify
 
 # ---- Chinese / Cantonese / Hokkien (zh/yue/nan) ----
-wok,yue,3,oed,short,pin,3 letters; Cantonese origin
-wonton,yue,6,oed,clean,pin,
-typhoon,zh,7,oed,clean,pin,
-ketchup,nan,7,oed,clean,pin,disputed etymology (Hokkien) but solid English word
-ginseng,zh,7,oed,clean,pin,
-oolong,zh,6,oed,clean,pin,
+wok,yue,3,mw|camb,short|verified,pin,3 letters; Cantonese origin
+wonton,yue,6,mw|camb,verified,pin,
+typhoon,zh,7,mw|camb,verified,pin,
+ketchup,nan,7,mw,verified,pin,disputed etymology (Hokkien) but solid English word; mw headword ketchup; catsup is the variant
+ginseng,zh,7,mw,verified,pin,
+oolong,zh,6,mw|camb,verified,pin,
 lychee,zh,6,oed,variant,hold,variants litchi/lichee — pick one or exclude
-kowtow,zh,6,oed,clean,pin,
-sampan,zh,6,oed,clean,pin,
-pekoe,zh,5,oed,clean,pin,tea grade
-cheongsam,yue,9,oed,clean,pin,9 letters — at limit
+kowtow,zh,6,mw|camb,verified,pin,
+sampan,zh,6,mw|camb,verified,pin,
+pekoe,zh,5,mw|camb,verified,pin,tea grade
+cheongsam,yue,9,mw|camb,verified,pin,9 letters — at limit
 bao,zh,3,mw,short|variant,hold,3 letters; also means steamed bun — recent
 boba,zh,4,mw,check,hold,MW entry; verify; from Cantonese/Mandarin
 tao,zh,3,oed,short|variant,hold,variant dao; also philosophical — consider exclude
@@ -94,54 +94,54 @@ pakchoi,yue,7,oed,variant,hold,implosion of "pak choi"; usually spaced — verif
 mahjong,zh,7,oed,variant,hold,variants mah-jongg/majong — verify solid form acceptance
 
 # ---- Korean (ko) : OED 2021-09 (+26) and 2024-12 (+7) batches ----
-kimchi,ko,6,oed,clean,pin,
-soju,ko,4,oed,clean,pin,
-bibimbap,ko,8,oed,clean,pin,
-hanbok,ko,6,oed,clean,pin,
-mukbang,ko,7,oed,clean,pin,OED 2021-09
-bulgogi,ko,7,oed,clean,pin,
-banchan,ko,7,oed,clean,pin,OED 2021-09
-japchae,ko,7,oed,clean,pin,OED 2021-09
+kimchi,ko,6,mw|camb,verified,pin,mw headword kimchi; kimchee is the variant
+soju,ko,4,mw,verified,pin,
+bibimbap,ko,8,mw|camb,verified,pin,
+hanbok,ko,6,oed,verified,pin,
+mukbang,ko,7,oed|mw,verified,pin,OED 2021-09
+bulgogi,ko,7,oed|mw,verified,pin,
+banchan,ko,7,oed,verified,pin,OED 2021-09
+japchae,ko,7,oed,verified,pin,OED 2021-09
 galbi,ko,5,oed,check,hold,verify
 kimbap,ko,6,oed,variant,hold,variant gimbap
 chimaek,ko,7,oed,check,hold,OED 2021-09; verify
-daebak,ko,6,oed,clean,pin,OED 2021-09
-aegyo,ko,5,oed,clean,pin,OED 2021-09
+daebak,ko,6,oed,verified,pin,OED 2021-09
+aegyo,ko,5,oed,verified,pin,OED 2021-09
 noona,ko,5,oed,check,hold,verify
-oppa,ko,4,oed,clean,pin,OED 2021-09
+oppa,ko,4,oed,verified,pin,OED 2021-09
 unni,ko,4,oed,check,hold,verify
-manhwa,ko,6,oed,clean,pin,OED 2021-09
-hallyu,ko,6,oed,clean,pin,OED 2021-09
+manhwa,ko,6,oed,verified,pin,OED 2021-09
+hallyu,ko,6,oed,verified,pin,OED 2021-09
 trot,ko,4,oed,variant,exclude,homograph with English trot — exclude
-skinship,ko,8,oed,clean,pin,OED 2021-09
-konglish,ko,8,oed,clean,pin,OED 2021-09
-dalgona,ko,7,oed,clean,pin,OED 2024-12
-hyung,ko,5,oed,clean,pin,OED 2024-12
-noraebang,ko,9,oed,clean,pin,OED 2024-12; 9 letters at limit
-maknae,ko,6,oed,clean,pin,OED 2024-12
-jjigae,ko,6,oed,clean,pin,OED 2024-12
-pansori,ko,7,oed,clean,pin,OED 2024-12
-gochujang,ko,9,oed,clean,pin,9 letters at limit
+skinship,ko,8,oed,verified,pin,OED 2021-09
+konglish,ko,8,oed,verified,pin,OED 2021-09; OED headword capitalized Konglish; lowercase fine for diceware
+dalgona,ko,7,oed,verified,pin,OED 2024-12; added OED Dec 2024 batch
+hyung,ko,5,oed,verified,pin,OED 2024-12; OED Dec-2024 new word; kinship term elder brother
+noraebang,ko,9,oed,verified,pin,OED 2024-12; 9 letters at limit; OED Dec-2024 new word; karaoke room
+maknae,ko,6,oed,verified,pin,OED 2024-12; OED Dec-2024 new word; youngest member
+jjigae,ko,6,oed,verified,pin,OED 2024-12; OED Dec-2024 new word; broth-based stew
+pansori,ko,7,oed,verified,pin,OED 2024-12; OED Dec-2024 new word; traditional narrative singing
+gochujang,ko,9,oed|mw,verified,pin,9 letters at limit; OED entry gochujang_n; also Merriam-Webster
 
 # ---- Sanskrit/Buddhist-via-Asia & misc already in English ----
-karma,sa,5,oed,clean,pin,
-yoga,sa,4,oed,clean,pin,
-guru,sa,4,oed,clean,pin,
-mantra,sa,6,oed,clean,pin,
-nirvana,sa,7,oed,clean,pin,
-avatar,sa,6,oed,clean,pin,
-mandala,sa,7,oed,clean,pin,
-pundit,sa,6,oed,clean,pin,
-bungalow,misc,8,oed,clean,pin,Hindi/Gujarati origin
-shampoo,misc,7,oed,clean,pin,Hindi origin
-jungle,misc,6,oed,clean,pin,Hindi origin
-veranda,misc,7,oed,clean,pin,
-cushy,misc,5,oed,clean,pin,
-loot,misc,4,oed,clean,pin,Hindi origin
-thug,misc,4,oed,clean,pin,Hindi origin
-curry,misc,5,oed,clean,pin,Tamil origin
-mango,misc,5,oed,clean,pin,
-gymkhana,misc,8,oed,clean,pin,
+karma,sa,5,mw|camb,verified,pin,
+yoga,sa,4,mw|camb,verified,pin,
+guru,sa,4,mw|camb,verified,pin,established common-noun expert sense alongside proper noun
+mantra,sa,6,mw|camb,verified,pin,
+nirvana,sa,7,mw|camb,verified,pin,common-noun bliss sense exists despite band
+avatar,sa,6,mw|camb,verified,pin,common-noun online-image/embodiment sense despite film
+mandala,sa,7,mw|camb,verified,pin,
+pundit,sa,6,camb,verified,pin,
+bungalow,misc,8,camb,verified,pin,Hindi/Gujarati origin
+shampoo,misc,7,camb,verified,pin,Hindi origin
+jungle,misc,6,camb,verified,pin,Hindi origin
+veranda,misc,7,camb,verified,pin,verandah is listed variant; veranda is main headword
+cushy,misc,5,camb,verified,pin,
+loot,misc,4,camb,verified,pin,Hindi origin
+thug,misc,4,camb,verified,pin,Hindi origin; no offensive dict label; only informal/old-fashioned senses
+curry,misc,5,camb,verified,pin,Tamil origin
+mango,misc,5,camb,verified,pin,
+gymkhana,misc,8,camb,verified,pin,
 
 # ============================================================================
 # EXCLUDED — multi-token in normal English form (kept here for traceability;
@@ -169,77 +169,77 @@ gymkhana,misc,8,oed,clean,pin,
 #   pin  = high-confidence, prefix-free-safe, balanced across languages (~160 cap).
 #   hold = med-confidence, high-conf beyond cap, or prefix-collision loser; T2 reviews.
 # ============================================================================
-aikido,ja,6,camb,clean,pin,Japanese martial art
-bushido,ja,7,mw,clean,pin,samurai honour code
-daimyo,ja,6,mw,clean,pin,Japanese feudal lord
-dojo,ja,4,camb,clean,pin,martial-arts training hall
-gyoza,ja,5,camb,clean,pin,pan-fried dumpling
-hibachi,ja,7,camb,clean,pin,charcoal brazier or grill
-ikebana,ja,7,camb,clean,pin,Japanese flower-arranging art
-kabuki,ja,6,camb,clean,pin,classical Japanese theatre
-kaizen,ja,6,camb,clean,pin,continuous-improvement practice
-kanji,ja,5,camb,clean,pin,Japanese logographic characters
-kendo,ja,5,camb,clean,pin,sword-fighting martial art
-koan,ja,4,mw,clean,pin,Zen meditative paradox
-matcha,ja,6,camb,clean,pin,powdered green tea
-mikado,ja,6,mw,clean,pin,Japanese emperor
-mirin,ja,5,camb,clean,pin,sweet rice cooking wine
-nori,ja,4,camb,clean,pin,dried edible seaweed
-otaku,ja,5,camb,clean,pin,obsessive pop-culture fan
-panko,ja,5,camb,clean,pin,Japanese breadcrumbs
-ponzu,ja,5,mw,clean,pin,citrus-soy dipping sauce
-ronin,ja,5,mw,clean,pin,masterless wandering samurai
-ryokan,ja,6,mw,clean,pin,traditional Japanese inn
-satori,ja,6,mw,clean,pin,sudden Zen enlightenment
-shiatsu,ja,7,camb,clean,pin,finger-pressure massage therapy
-chaebol,ko,7,camb,clean,pin,Korean family conglomerate
-hangul,ko,6,mw,clean,pin,Korean alphabet
-taekwondo,ko,9,camb,clean,pin,Korean martial art
-bamboo,misc,6,camb,clean,pin,tall woody grass (Malay)
-batik,misc,5,camb,clean,pin,wax-resist dyed fabric (Javanese)
-cockatoo,misc,8,camb,clean,pin,crested parrot (Malay)
-durian,misc,6,camb,clean,pin,pungent tropical fruit (Malay)
-gecko,misc,5,camb,clean,pin,small house lizard (Malay)
-gingham,misc,7,camb,clean,pin,checked cotton cloth (Malay)
-gong,misc,4,camb,clean,pin,struck metal percussion disc (Malay)
-orangutan,misc,9,camb,clean,pin,reddish great ape (Malay)
-pangolin,misc,8,camb,clean,pin,scaly anteater (Malay)
-rattan,misc,6,camb,clean,pin,climbing palm cane (Malay)
-sago,misc,4,camb,clean,pin,palm-pith starch (Malay)
-sarong,misc,6,camb,clean,pin,wrapped skirt garment (Malay)
-satay,misc,5,camb,clean,pin,grilled marinated skewers (Malay)
-tempeh,misc,6,camb,clean,pin,fermented soybean cake (Indonesian)
-ashram,sa,6,camb,clean,pin,Hindu spiritual retreat (Sanskrit)
-atoll,sa,5,camb,clean,pin,coral island; Maldivian Dhivehi
-bandanna,sa,8,camb,clean,pin,patterned kerchief; variant bandana
-bangle,sa,6,camb,clean,pin,rigid bracelet (Hindi)
-basmati,sa,7,camb,clean,pin,aromatic long-grain rice
-bazaar,sa,6,camb,clean,pin,market; Persian via Urdu
-biryani,sa,7,camb,clean,pin,spiced layered rice dish
-chakra,sa,6,camb,clean,pin,body energy centre (Sanskrit)
-cheetah,sa,7,camb,clean,pin,spotted big cat (Hindi)
-chutney,sa,7,camb,clean,pin,spiced fruit condiment (Hindi)
-congee,sa,6,camb,clean,pin,rice porridge; Tamil kanji origin
-dharma,sa,6,mw,clean,pin,cosmic law or duty (Sanskrit)
-dinghy,sa,6,camb,clean,pin,small open boat (Bengali)
-dosa,sa,4,camb,clean,pin,South Indian rice crepe
-ghee,sa,4,camb,clean,pin,clarified butter (Hindi)
-jute,sa,4,camb,clean,pin,plant bast fibre (Bengali)
-khaki,sa,5,camb,clean,pin,dust-coloured cloth (Urdu)
-korma,sa,5,camb,clean,pin,mild creamy curry (Urdu)
-maharaja,sa,8,camb,clean,pin,Indian prince (Sanskrit)
-masala,sa,6,camb,clean,pin,blended spice mixture (Hindi)
-mongoose,sa,8,camb,clean,pin,snake-killing mammal (Marathi)
-naan,sa,4,camb,clean,pin,leavened Indian flatbread
-paneer,sa,6,camb,clean,pin,fresh Indian cheese
-hoisin,yue,6,camb,clean,pin,Cantonese sweet sauce
-kumquat,yue,7,camb,clean,pin,small citrus fruit (Cantonese)
-loquat,yue,6,camb,clean,pin,yellow Asian fruit (Cantonese)
-kaolin,zh,6,camb,clean,pin,fine white china clay
-pinyin,zh,6,camb,clean,pin,Mandarin romanization system
-qigong,zh,6,mw,clean,pin,Chinese breathing-exercise system
-yang,zh,4,camb,clean,pin,active cosmic principle
-yin,zh,3,camb,clean,pin,passive cosmic principle
+aikido,ja,6,camb,verified,pin,Japanese martial art
+bushido,ja,7,mw,verified,pin,samurai honour code
+daimyo,ja,6,mw,verified,pin,Japanese feudal lord
+dojo,ja,4,camb,verified,pin,martial-arts training hall
+gyoza,ja,5,camb,verified,pin,pan-fried dumpling
+hibachi,ja,7,camb,verified,pin,charcoal brazier or grill
+ikebana,ja,7,camb,verified,pin,Japanese flower-arranging art
+kabuki,ja,6,camb,verified,pin,classical Japanese theatre
+kaizen,ja,6,camb,verified,pin,continuous-improvement practice
+kanji,ja,5,camb,verified,pin,Japanese logographic characters
+kendo,ja,5,camb,verified,pin,sword-fighting martial art
+koan,ja,4,mw,verified,pin,Zen meditative paradox
+matcha,ja,6,camb,verified,pin,powdered green tea
+mikado,ja,6,mw,verified,pin,Japanese emperor
+mirin,ja,5,camb,verified,pin,sweet rice cooking wine
+nori,ja,4,camb,verified,pin,dried edible seaweed
+otaku,ja,5,camb,verified,pin,obsessive pop-culture fan
+panko,ja,5,camb,verified,pin,Japanese breadcrumbs
+ponzu,ja,5,mw,verified,pin,citrus-soy dipping sauce
+ronin,ja,5,mw,verified,pin,masterless wandering samurai
+ryokan,ja,6,mw,verified,pin,traditional Japanese inn
+satori,ja,6,mw,verified,pin,sudden Zen enlightenment
+shiatsu,ja,7,camb,verified,pin,finger-pressure massage therapy
+chaebol,ko,7,camb,verified,pin,Korean family conglomerate
+hangul,ko,6,mw,verified,pin,Korean alphabet
+taekwondo,ko,9,camb,verified,pin,Korean martial art
+bamboo,misc,6,camb,verified,pin,tall woody grass (Malay)
+batik,misc,5,camb,verified,pin,wax-resist dyed fabric (Javanese)
+cockatoo,misc,8,camb,verified,pin,crested parrot (Malay)
+durian,misc,6,camb,verified,pin,pungent tropical fruit (Malay)
+gecko,misc,5,camb,verified,pin,small house lizard (Malay)
+gingham,misc,7,camb,verified,pin,checked cotton cloth (Malay)
+gong,misc,4,camb,verified,pin,struck metal percussion disc (Malay)
+orangutan,misc,9,camb,verified,pin,reddish great ape (Malay)
+pangolin,misc,8,camb,verified,pin,scaly anteater (Malay)
+rattan,misc,6,camb,verified,pin,climbing palm cane (Malay)
+sago,misc,4,camb,verified,pin,palm-pith starch (Malay)
+sarong,misc,6,camb,verified,pin,wrapped skirt garment (Malay)
+satay,misc,5,camb,verified,pin,grilled marinated skewers (Malay)
+tempeh,misc,6,camb,verified,pin,fermented soybean cake (Indonesian)
+ashram,sa,6,camb,verified,pin,Hindu spiritual retreat (Sanskrit)
+atoll,sa,5,camb,verified,pin,coral island; Maldivian Dhivehi
+bandanna,sa,8,camb,verified,pin,patterned kerchief; variant bandana
+bangle,sa,6,camb,verified,pin,rigid bracelet (Hindi)
+basmati,sa,7,camb,verified,pin,aromatic long-grain rice
+bazaar,sa,6,camb,verified,pin,market; Persian via Urdu
+biryani,sa,7,camb,verified,pin,spiced layered rice dish
+chakra,sa,6,camb,verified,pin,body energy centre (Sanskrit)
+cheetah,sa,7,camb,verified,pin,spotted big cat (Hindi)
+chutney,sa,7,camb,verified,pin,spiced fruit condiment (Hindi)
+congee,sa,6,camb,verified,pin,rice porridge; Tamil kanji origin
+dharma,sa,6,mw,verified,pin,cosmic law or duty (Sanskrit)
+dinghy,sa,6,camb,verified,pin,small open boat (Bengali)
+dosa,sa,4,camb,verified,pin,South Indian rice crepe
+ghee,sa,4,camb,verified,pin,clarified butter (Hindi)
+jute,sa,4,camb,verified,pin,plant bast fibre (Bengali)
+khaki,sa,5,camb,verified,pin,dust-coloured cloth (Urdu)
+korma,sa,5,camb,verified,pin,mild creamy curry (Urdu)
+maharaja,sa,8,camb,verified,pin,Indian prince (Sanskrit)
+masala,sa,6,camb,verified,pin,blended spice mixture (Hindi)
+mongoose,sa,8,camb,verified,pin,snake-killing mammal (Marathi)
+naan,sa,4,camb,verified,pin,leavened Indian flatbread
+paneer,sa,6,camb,verified,pin,fresh Indian cheese
+hoisin,yue,6,camb,verified,pin,Cantonese sweet sauce
+kumquat,yue,7,camb,verified,pin,small citrus fruit (Cantonese)
+loquat,yue,6,camb,verified,pin,yellow Asian fruit (Cantonese)
+kaolin,zh,6,camb,verified,pin,fine white china clay
+pinyin,zh,6,camb,verified,pin,Mandarin romanization system
+qigong,zh,6,mw,verified,pin,Chinese breathing-exercise system
+yang,zh,4,camb,verified,pin,active cosmic principle
+yin,zh,3,camb,verified,pin,passive cosmic principle
 # --- hold (review in T2) ---
 shiitake,ja,8,mw,clean,hold,high-conf overflow (>pin cap); edible dark mushroom
 shoji,ja,5,camb,clean,hold,high-conf overflow (>pin cap); paper sliding screen

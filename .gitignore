@@ -14,3 +14,7 @@ output/*.pdf
 
 # Local editor / MCP config (not part of the published project)
 .claude/settings.local.json
+
+# macOS junk / build artifact (audit is reproducible via scripts/audit.sh)
+.DS_Store
+output/audit_report.json
