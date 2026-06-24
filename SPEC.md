@@ -1,9 +1,11 @@
 # SPEC.md — asian-diceware
 
-**Status:** v0.2 implemented (as of 2026-06-24). Pipeline + S1-S8 tests green;
-the 160-word pin set is frozen and dictionary-verified. Remaining work toward
-v1.0 is tracked in §9 / §10. Began as a pre-implementation handoff spec; kept as
-the living design reference.
+**Status:** v0.3 implemented (as of 2026-06-25). Pipeline + S1-S8 tests green and
+the `wla` external audit passes. The 160-word pin set is frozen and dictionary-
+verified, and the 7,776-word frequency fill has been quality-hardened (proper
+nouns, acronyms, slang, and junk removed; every final word reviewed). Remaining
+work toward v1.0 is tracked in §9 / §10. Began as a pre-implementation handoff
+spec; kept as the living design reference.
 **Audience:** an implementer (human or Claude Code) starting from an empty repo.
 **This file is self-contained.** You do not need to read any external research
 report to implement the project. Everything required is here.
@@ -267,17 +269,20 @@ index 7775 → `66666`).
 - [x] **T4** `normalize.py`: case/ASCII/NFC/length filters.
 - [x] **T5** `filter_quality.py`: badwords + homophone/hard-spell + proper-noun
       (pins exempt from the latter two, not from badwords). Homophone/proper-noun
-      lists are functional starter sets, extensible in future curation.
+      lists were EXPANDED in the v0.3 quality pass via a multi-round agent +
+      manual review (proper_nouns.txt ≈ 2,238; quality_exclude.txt ≈ 544),
+      removing ~2,600 proper nouns / acronyms / junk from the frequency fill.
 - [x] **T6** `prune.py`: prefix-free pruning with P protected (§5.1, option A,
       trie-based). Fails loudly on pinned–pinned collision (covered by a test).
 - [x] **T7** `assemble.py`: pin P, fill by frequency to exactly the target.
 - [x] **T8** `validate.py` + `tests/`: S1–S8 green (13 tests); `test_entropy`
       follows the §2 pattern (assert count, then derive entropy).
-- [~] **T9** Outputs: plain list + `_dice.txt` produced for 1296 and 7776;
-      `audit.sh` wraps `wla` (skips gracefully if absent). PENDING: install
-      cargo + run the `wla` external audit; optional PDF.
+- [x] **T9** Outputs: plain list + `_dice.txt` for 1296 and 7776; `audit.sh`
+      wraps `wla`. The `wla` external audit PASSES (prefix-free, uniquely
+      decodable, Kraft-McMillan satisfied, entropy 12.925, mean len 6.37).
+      PENDING (v1.x): optional printable PDF.
 - [~] **T10** README / CONTRIBUTING / CHANGELOG done (bilingual zh-TW + English).
-      Tagged **v0.2** (PGP-signed). PENDING: v1.0 tag once T9 + release land.
+      Tagged **v0.3** (PGP-signed). PENDING: v1.0 tag once T9 + release land.
 
 ---
 
@@ -288,9 +293,12 @@ index 7775 → `66666`).
 - **v0.2 — ✅ done (tagged, PGP-signed).** Loanword curation complete (T2); the
   160-pin set is frozen and dictionary-verified. The full 7776 list also builds
   and passes S1–S8.
-- **v1.0 — in progress.** Remaining: `wla` external audit passes, (optional) PDF,
-  set a remote + publish CC-BY, tag v1.0. The 7776 list already passes all
-  S1–S8 plus the advisory loanword-share band.
+- **v0.3 — ✅ done (tagged, PGP-signed).** 7,776-word fill quality-hardened:
+  ~2,600 proper nouns / acronyms / junk removed across a multi-round review and
+  refilled with clean words; every final word reviewed; `wla` audit passes.
+- **v1.0 — in progress.** Remaining: (optional) printable PDF, set a remote +
+  publish CC-BY, tag v1.0. The 7776 list already passes all S1–S8, the advisory
+  loanword-share band, and the `wla` external audit.
 - **v1.x** usability feedback, loanword-share tuning, AnonTicket integration test.
 
 ---

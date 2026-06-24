@@ -38,6 +38,13 @@ project aims to follow semantic versioning once it reaches v1.0.
   All 89 original pins verified against live OED/MW/Cambridge entries (none needed
   spelling changes or demotion); the full 160-pin set is now dictionary-verified
   and frozen.
+- **v0.3 品質強化 / Quality hardening of the 7776 fill**：以多輪 agent ＋ 人工審閱，
+  從頻率填充字中移除約 2,600 個專有名詞、縮寫、slang、非英文 token，並以乾淨字遞補；
+  最終 7776 每字皆經審閱、0 縮寫；`wla` 外部稽核通過。過濾清單擴充至
+  `proper_nouns.txt` ≈ 2,238、`quality_exclude.txt` ≈ 544。
+  Removed ~2,600 proper nouns / acronyms / slang / foreign tokens from the
+  frequency fill across a multi-round review and refilled with clean words; every
+  final word reviewed; the `wla` external audit passes.
 
 ### 里程碑 / Milestone
 - **v0.1**：pipeline 端到端跑出一份 1296 字（4 顆骰）詞表，全部驗收測試通過，
@@ -46,3 +53,5 @@ project aims to follow semantic versioning once it reaches v1.0.
   acceptance tests green — proves the methodology.
 - **v0.2**：外來語策展完成、pin 集凍結（160 個皆字典查證）。
   loanword curation done (T2); the 160-pin set is frozen and dictionary-verified.
+- **v0.3**：7776 詞表品質強化（移除約 2,600 雜訊字、`wla` 稽核通過）。
+  fill quality-hardened (~2,600 junk words removed; `wla` audit passes).
