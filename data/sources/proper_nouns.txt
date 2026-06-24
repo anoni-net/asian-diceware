@@ -1,0 +1,78 @@
+# proper_nouns.txt — lowercased proper nouns to drop (frequency lists lowercase
+# everything, so place/person/brand names appear as ordinary tokens).
+# Applies to NON-pinned words only: pinned loanwords are lexicalized common
+# nouns and are exempt (SPEC §5 stage 3). Starter set; extend during T5.
+#
+# --- countries / regions / cities ---
+china
+india
+japan
+korea
+america
+canada
+mexico
+brazil
+france
+spain
+italy
+germany
+russia
+britain
+england
+london
+paris
+tokyo
+beijing
+taiwan
+texas
+florida
+europe
+africa
+asia
+# --- common given names ---
+john
+james
+david
+michael
+robert
+mary
+sarah
+peter
+paul
+mark
+thomas
+william
+george
+henry
+charles
+joseph
+daniel
+emma
+laura
+anna
+maria
+# --- months / days ---
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday
+january
+february
+april
+august
+october
+november
+december
+# --- brands / orgs commonly in corpora ---
+google
+amazon
+apple
+microsoft
+facebook
+twitter
+youtube
+windows
+android
