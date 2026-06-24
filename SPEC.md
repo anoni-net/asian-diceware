@@ -261,10 +261,11 @@ index 7775 → `66666`).
 - [x] **T1** Repo skeleton: `pyproject.toml`, ruff+pytest config, MIT `LICENSE`
       + CC-BY-4.0 `LICENSE-DATA`, all module files, `data/`, `output/`. (CI
       runner not yet wired — pending a remote; ruff + pytest run locally.)
-- [x] **T2** `loanwords_seed.csv` verified: all **160 pins** confirmed against
-      live OED/MW/Cambridge entries and flagged `verified`; +71 dictionary-
-      attested pins added, balanced across languages; pin set frozen at 160
-      (within the ~120–180 target). 65 candidates parked as `hold` for review.
+- [x] **T2** `loanwords_seed.csv` verified: all pins confirmed against live
+      OED/MW/Cambridge entries and flagged `verified` (89 original + 71 added,
+      balanced across languages). Pin set is **161** (frozen at 160 in v0.2/v0.3,
+      plus `boba` promoted in v0.3.1), within the ~120–180 target. ~64 candidates
+      parked as `hold` for review.
 - [x] **T3** `collect.py`: load vendored freq snapshot + seed CSV → `candidates.csv`.
 - [x] **T4** `normalize.py`: case/ASCII/NFC/length filters.
 - [x] **T5** `filter_quality.py`: badwords + homophone/hard-spell + proper-noun
@@ -282,7 +283,7 @@ index 7775 → `66666`).
       decodable, Kraft-McMillan satisfied, entropy 12.925, mean len 6.37).
       PENDING (v1.x): optional printable PDF.
 - [~] **T10** README / CONTRIBUTING / CHANGELOG done (bilingual zh-TW + English).
-      Tagged **v0.3** (PGP-signed). PENDING: v1.0 tag once T9 + release land.
+      Tagged **v0.3.1** (PGP-signed). PENDING: v1.0 tag once release lands.
 
 ---
 
@@ -296,6 +297,8 @@ index 7775 → `66666`).
 - **v0.3 — ✅ done (tagged, PGP-signed).** 7,776-word fill quality-hardened:
   ~2,600 proper nouns / acronyms / junk removed across a multi-round review and
   refilled with clean words; every final word reviewed; `wla` audit passes.
+- **v0.3.1 — ✅ done (tagged, PGP-signed).** Promoted `boba` (bubble tea, Taiwan
+  origin) from `hold` to a pin → **161 pins**.
 - **v1.0 — in progress.** Remaining: (optional) printable PDF, set a remote +
   publish CC-BY, tag v1.0. The 7776 list already passes all S1–S8, the advisory
   loanword-share band, and the `wla` external audit.
