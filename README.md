@@ -59,6 +59,38 @@ curated, dictionary-verified `data/sources/loanwords_seed.csv`. Pinned loanwords
 are protected through pruning: prefix collisions drop the non-pinned side, and a
 collision between two pinned words fails the build loudly (SPEC §5.1).
 
+### Featured Asian loanwords
+
+The list pins **161 dictionary-attested Asian loanwords** (verified in OED /
+Merriam-Webster / Cambridge). A selection by origin:
+
+- **Japanese (62)** — `sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke`
+  `karate` `judo` `ninja` `samurai` `kimono` `origami` `bonsai` `emoji` `manga`
+  `anime` `tsunami` `zen` `umami` `haiku` `ikebana` `kaizen`.
+- **Korean (25)** — `kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo`
+  `hallyu` `manhwa` `mukbang` `oppa` `aegyo` `daebak` (many entered the OED in
+  its 2021 / 2024 K-culture batches).
+- **Chinese / Mandarin (12)** — `typhoon` `oolong` `ginseng` `qigong` `kowtow`
+  `sampan` `pinyin` `yin` `yang` `pekoe` `kaolin` `boba`.
+- **Cantonese (6)** — `wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam`.
+- **Hokkien / Min-nan (1)** — `ketchup` (yes, it traces back to Hokkien).
+- **South Asian / Sanskrit (31)** — `yoga` `karma` `guru` `mantra` `nirvana`
+  `avatar` `chakra` `mandala` `naan` `biryani` `masala` `ghee` `chutney`
+  `cheetah` `mongoose` `bazaar` `bandanna` `khaki` `pundit`.
+- **Other Asian — Malay / South & SE Asian (24)** — `bamboo` `gong` `curry`
+  `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan`
+  `gecko` `cockatoo` `pangolin` `shampoo` `bungalow` `jungle` `loot` `thug`.
+
+**You may not realize these are Asian loanwords:** `tycoon`, `honcho`,
+`ketchup`, `shampoo`, `bungalow`, `jungle`, `loot`, `thug`, `cushy`, `atoll`,
+`gecko`, `cheetah`, `gong`, `avatar`, `guru`, `bazaar`, `dinghy`, `mongoose`.
+
+**Taiwan / Sinophone flavor:** `oolong` (Taiwanese tea), `boba` (bubble tea,
+which originated in Taiwan), `typhoon`, `ketchup` (Hokkien), `pinyin`.
+
+The full curated set, with each word's language, dictionary, and notes, lives in
+[`data/sources/loanwords_seed.csv`](data/sources/loanwords_seed.csv).
+
 ### Licensing
 
 - Code (`src/`, `scripts/`, `tests/`): MIT — see [`LICENSE`](LICENSE).
@@ -108,6 +140,24 @@ uv venv && uv pip install -e ".[dev]"
 `collect → normalize → filter_quality → prune → assemble → validate`
 
 頻率排序來自 vendored 快照（`data/sources/freq_en.txt`，源自 [`wordfreq`](https://github.com/rspeer/wordfreq)）。外來語來自人工策展、字典查證的 `data/sources/loanwords_seed.csv`。被 pin 的外來語在剪枝全程受保護：prefix 衝突時剔除非 pin 的一方，兩個 pin 互相衝突則讓建構明確失敗（SPEC §5.1）。
+
+### 特色亞洲字詞
+
+詞表 pin 入 **161 個有字典背書的亞洲外來語**（經 OED／Merriam-Webster／Cambridge 查證）。依語源舉例：
+
+- **日語（62）**：`sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke` `karate` `judo` `ninja` `samurai` `kimono` `origami` `bonsai` `emoji` `manga` `anime` `tsunami` `zen` `umami` `haiku` `ikebana` `kaizen`。
+- **韓語（25）**：`kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo` `hallyu` `manhwa` `mukbang` `oppa` `aegyo` `daebak`（不少是 OED 2021／2024 韓流批次新增）。
+- **華語／Mandarin（12）**：`typhoon` `oolong` `ginseng` `qigong` `kowtow` `sampan` `pinyin` `yin` `yang` `pekoe` `kaolin` `boba`。
+- **粵語（6）**：`wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam`。
+- **閩南語／台語（1）**：`ketchup`（沒錯，源頭可追到閩南語）。
+- **南亞／梵語（31）**：`yoga` `karma` `guru` `mantra` `nirvana` `avatar` `chakra` `mandala` `naan` `biryani` `masala` `ghee` `chutney` `cheetah` `mongoose` `bazaar` `bandanna` `khaki` `pundit`。
+- **其他亞洲（馬來／南亞、東南亞等，24）**：`bamboo` `gong` `curry` `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko` `cockatoo` `pangolin` `shampoo` `bungalow` `jungle` `loot` `thug`。
+
+**你可能沒發現這些其實是亞洲外來語**：`tycoon`（大亨）、`honcho`（老大）、`ketchup`、`shampoo`、`bungalow`、`jungle`、`loot`、`thug`、`cushy`、`atoll`、`gecko`、`cheetah`、`gong`、`avatar`、`guru`、`bazaar`、`dinghy`、`mongoose`。
+
+**台灣／華語圈味**：`oolong`（烏龍茶）、`boba`（珍珠奶茶，源自台灣）、`typhoon`（颱風）、`ketchup`（閩南語）、`pinyin`（拼音）。
+
+完整清單（含每字語源、字典、備註）在 [`data/sources/loanwords_seed.csv`](data/sources/loanwords_seed.csv)。
 
 ### 授權
 
