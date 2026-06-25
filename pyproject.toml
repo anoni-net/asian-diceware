@@ -13,6 +13,8 @@ dependencies = []
 # The pipeline itself runs offline against the vendored snapshot and needs none of these.
 snapshot = ["wordfreq>=3.0"]
 dev = ["pytest>=8.0", "ruff>=0.6"]
+# Only needed to render the printable booklet PDF (scripts/make_booklet.py).
+booklet = ["weasyprint>=60", "segno>=1.6"]
 
 [project.scripts]
 asian-diceware = "asian_diceware.cli:main"
@@ -30,6 +32,11 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# The booklet generator embeds HTML/CSS as string literals; those lines are
+# intentionally long (wrapping CJK strings would inject stray spaces).
+"scripts/make_booklet.py" = ["E501"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

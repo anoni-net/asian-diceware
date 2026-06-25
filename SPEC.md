@@ -224,13 +224,14 @@ asian-diceware/
 ├── output/
 │   ├── asian_diceware_7776.txt         # plain wordlist (one word per line)
 │   ├── asian_diceware_7776_dice.txt    # "11111\tword" five-digit roll + tab + word
-│   └── asian_diceware_7776.pdf         # printable (optional, v1.x)
+│   └── asian_diceware_7776_booklet_a5.pdf  # printable booklet (gitignored build artifact)
 ├── src/asian_diceware/
 │   ├── collect.py normalize.py filter_quality.py prune.py assemble.py
 │   ├── validate.py  cli.py
 ├── scripts/
 │   ├── run_pipeline.sh                 # end-to-end reproducible build
-│   └── audit.sh                        # wla wrapper
+│   ├── audit.sh                        # wla wrapper
+│   └── make_booklet.py / .sh           # printable A5/A6 lookup booklet (weasyprint)
 └── tests/
     ├── test_wordlist.py                # S1–S8
     └── test_pipeline.py
@@ -284,7 +285,8 @@ index 7775 → `66666`).
 - [x] **T9** Outputs: plain list + `_dice.txt` for 1296 and 7776; `audit.sh`
       wraps `wla`. The `wla` external audit PASSES (prefix-free, uniquely
       decodable, Kraft-McMillan satisfied, entropy 12.925, mean len 6.37).
-      PENDING (v1.x): optional printable PDF.
+      Printable PDF booklet DONE: `scripts/make_booklet.py` (weasyprint + segno)
+      renders an A5/A6 lookup booklet with cover, how-to, QR, and CC-BY colophon.
 - [~] **T10** README / CONTRIBUTING / CHANGELOG done (bilingual zh-TW + English).
       Tagged **v0.3.1** (PGP-signed). PENDING: v1.0 tag once release lands.
 
@@ -303,9 +305,10 @@ index 7775 → `66666`).
 - **v0.3.1 — ✅ done (tagged, PGP-signed).** Promoted `boba` (bubble tea, Taiwan
   origin) from `hold` to a pin → **161 pins**.
 - **v1.0 — in progress.** Done: published to GitHub (`anoni-net/asian-diceware`,
-  CC-BY data) and CI wired (ruff + pytest + reproducibility + `wla`). Remaining:
-  (optional) printable PDF, then tag v1.0. The 7776 list already passes all
-  S1–S8, the advisory loanword-share band, and the `wla` external audit.
+  CC-BY data), CI wired (ruff + pytest + reproducibility + `wla`), and a
+  printable booklet generator (`scripts/make_booklet.py`). Remaining: tag v1.0.
+  The 7776 list already passes all S1–S8, the advisory loanword-share band,
+  and the `wla` external audit.
 - **v1.x** usability feedback, loanword-share tuning, AnonTicket integration test.
 
 ---

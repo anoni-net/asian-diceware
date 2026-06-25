@@ -9,6 +9,16 @@ project aims to follow semantic versioning once it reaches v1.0.
 ## [Unreleased]
 
 ### 新增 / Added
+- **可列印小冊 / Printable booklet**（`scripts/make_booklet.py`）：用 weasyprint + segno
+  把 7776 詞表排成 A5/A6 擲骰查表小冊，含封面、使用教學、QR、CC-BY 版權頁，輸出到
+  `output/`（gitignored）。以可嵌入的開源字型（Noto Sans TC、JetBrains Mono）內嵌中文，
+  任何 PDF 看圖程式都顯示得出來。新增 `[booklet]` optional 套件與 `scripts/make_booklet.sh` 封裝，
+  README 補「印成小冊」說明。
+  A printable booklet generator (weasyprint + segno) that lays the 7776 list
+  out as an A5/A6 roll-lookup booklet with a cover, how-to, QR, and a CC-BY
+  colophon, written to `output/` (gitignored). Embeds open fonts (Noto Sans TC +
+  JetBrains Mono) so Chinese renders in any viewer. Adds a `[booklet]` extra and the
+  `scripts/make_booklet.sh` wrapper; README gains a "Print a booklet" section.
 - **CI 驗證 / Continuous integration**（`.github/workflows/ci.yml`）：
   - `lint-test`：ruff（lint + format）與 pytest，在 Python 3.11/3.12/3.13 上跑。
   - `reproducibility`：從 vendored 來源重建 1296、7776 詞表，以 `git diff --exit-code`
@@ -20,10 +30,10 @@ project aims to follow semantic versioning once it reaches v1.0.
   committed lists + S1–S8); and the `wla` external audit (binary cached). Added
   a CI status badge to the README.
 - **使用教學 / Usage guide**（README）：新增「7776 vs 1296 該用哪一份」比較表，
-  以及「怎麼用這份表」教學（實體骰子、Python 的 `secrets` 範例、命令列快捷用法）。
+  以及「怎麼用這份表」教學（實體骰子、Python 的 `secrets` 範例、命令列快捷用法）與「還可以怎麼用」（兩人暗號、把號碼唸成字）。
   Added a README section comparing the 7776 and 1296 lists (when to use each)
   and a "Making a passphrase" tutorial: physical dice, a Python `secrets`
-  example, and quick command-line one-liners.
+  example, quick command-line one-liners, and an "Other uses" note (a two-person recognition phrase, and reading numbers aloud as words).
 - 專案骨架 / Repo skeleton：`pyproject.toml`（ruff + pytest）、MIT `LICENSE`、
   CC-BY-4.0 `LICENSE-DATA`、`CONTRIBUTING.md`。
 - 六階段建構 pipeline / Six-stage build pipeline（`collect`、`normalize`、

@@ -123,6 +123,49 @@ On Linux you can also use `shuf` with a secure source:
 Append a digit or symbol if a site demands one. Want more strength? Add words:
 each extra `7776` word is worth about 12.9 more bits.
 
+### Other uses
+
+The dice table is a number↔word codebook, so it is useful beyond passphrases:
+
+- **A recognition phrase between two people.** Meet in person, roll a phrase
+  together, and each keep it. Later, over a call or message, exchange the phrase
+  to confirm you are really talking to each other and not an impostor. Keep it
+  secret and prefer one-time use, or split it (you say the first three words,
+  they reply with the next three).
+- **Reading a number aloud without mistakes.** To compare a value such as a key
+  fingerprint or safety number, encode it with this table (write the number in
+  base-6 and look up each five-digit group) and read the words instead of the
+  digits — far less error-prone over the phone. This is what the PGP word list
+  does.
+
+The list itself is public and provides no encryption on its own; it only makes a
+shared value easy to say and compare. The security comes from how you exchange
+and store that value: an in-person meeting, an already-authenticated channel, or
+recognizing each other's voice.
+
+### Print a booklet
+
+You can print the 7776 list as a small **lookup booklet** to hand out at events,
+with your own community intro and contact page. The wordlist data is CC-BY-4.0,
+so this is allowed — keep the attribution on the colophon page.
+
+```bash
+brew install --cask font-noto-sans-tc font-jetbrains-mono  # macOS: embeddable CJK + mono
+uv pip install -e ".[booklet]"             # weasyprint + segno (QR)
+python scripts/make_booklet.py --size a5   # -> output/asian_diceware_7776_booklet_a5.pdf
+```
+
+It produces an A5 PDF (~36 pages = 9 A4 sheets for saddle-stitch); pass
+`--size a6` for a pocket version. Edit the `CONFIG` block at the top of
+`scripts/make_booklet.py` to set the cover text, contacts, and QR target.
+
+The booklet embeds open fonts (Noto Sans TC + JetBrains Mono) so the Chinese
+shows in any PDF viewer; install them as shown above (do not rely on system
+fonts like PingFang, which cannot be embedded for redistribution). On macOS run
+the wrapper `./scripts/make_booklet.sh`, which also adds the Homebrew library
+path WeasyPrint needs (`brew install pango` if it is missing). If no open CJK
+font is found the script warns and the Chinese may not display elsewhere.
+
 ### How it works
 
 A six-stage pipeline (see [`SPEC.md`](SPEC.md) §5):
@@ -267,6 +310,29 @@ Linux 也可以用 `shuf` 搭配安全的亂數來源：
 （macOS 內建沒有 `shuf`，`brew install coreutils` 後可用 `gshuf`）。
 
 網站若硬要數字或符號，補一個上去就好。想更強就加字：每多一個 `7776` 的字約多 12.9 bits。
+
+### 還可以怎麼用
+
+這張骰子表是一份「號碼↔字」的對照，所以不只能產密語：
+
+- **兩人之間的暗號**：見面時一起擲出一組字，各自記住。日後在電話或訊息裡互報這組字，確認對方是本人，不是被冒充。暗號要保密，最好一次性使用，或拆開用（你報前三個字，對方回後三個字）。
+- **把號碼唸成字、不會聽錯**：要核對像金鑰指紋、安全碼這類數字時，先用這張表把號碼換算成字（把數字寫成六進位，每五位查一個字），唸字比唸一長串數字不容易出錯。這也是 PGP word list 的做法。
+
+這份表本身是公開的、不提供加密，只是讓共用的數值好唸好核對。安全與否取決於你怎麼交換與保管那個數值（當面交換、已驗證的管道、聽得出對方聲音）。
+
+### 印成小冊
+
+可以把 7776 詞表印成一本擲骰**查表小冊**，在活動現場發放，並放上你們社群的介紹與聯絡頁。詞表資料採 CC-BY-4.0，這樣做沒問題，記得在版權頁保留出處標註。
+
+```bash
+brew install --cask font-noto-sans-tc font-jetbrains-mono  # macOS：可嵌入的中文與等寬字型
+uv pip install -e ".[booklet]"             # weasyprint + segno（QR）
+python scripts/make_booklet.py --size a5   # 產出 output/asian_diceware_7776_booklet_a5.pdf
+```
+
+預設輸出 A5（約 36 頁，9 張 A4 對折騎馬釘）。要口袋版就加 `--size a6`。封面文案、聯絡方式、QR 連結改 `scripts/make_booklet.py` 開頭的 `CONFIG` 區塊。
+
+小冊會內嵌開源字型（Noto Sans TC 與 JetBrains Mono），中文在任何 PDF 看圖程式都顯示得出來。請先照上面安裝這些字型，不要依賴 PingFang 等系統字型（無法嵌入再散布）。macOS 上用 `./scripts/make_booklet.sh`，會順便補上 WeasyPrint 需要的 Homebrew 函式庫路徑（缺的話跑 `brew install pango`）。找不到開源中文字型時，腳本會出現警告，中文可能在他機顯示不出來。
 
 ### 運作方式
 
