@@ -218,6 +218,34 @@ which originated in Taiwan), `typhoon`, `ketchup` (Hokkien), `pinyin`.
 The full curated set, with each word's language, dictionary, and notes, lives in
 [`data/sources/loanwords_seed.csv`](data/sources/loanwords_seed.csv).
 
+### Why ~3.8%? (read it like an ABV)
+
+Treat the 3.8% like a beer's alcohol content: a deliberately chosen number, not a
+watered-down accident. The share is capped by how many *recognizable* Asian
+loanwords English has actually absorbed as single dictionary words. An exhaustive
+OED / Merriam-Webster / Cambridge sweep turns up roughly 330 that a Taiwan /
+Sinophone reader would recognize. 292 are pinned and ~40 are held in reserve, so
+the recognizable well is nearly dry already.
+
+Pushing much higher (say 10% ≈ 778 words) would force one of two things, and we
+want neither:
+
+- **Flooding the list with obscure words** (`puttee`, `howdah`, `nilgai`,
+  `maund`) that most people can't spell, say, or recall. That breaks the EFF
+  property this list exists to keep: a passphrase you can write down and read
+  back without errors.
+- **Switching to romanized Mandarin / Zhuyin syllables.** That is a separate
+  project: Hanyu Pinyin, Wade-Giles, and Tongyong all coexist in Taiwan, so
+  spellings collide and turn ambiguous. See SPEC §11.
+
+And here is where the ABV analogy breaks down: **a higher percentage does not make
+the passphrase stronger.** Every word carries the same 12.925 bits whether it is
+`tofu` or `the`. The entropy comes from the list being exactly 7776 words with
+each die roll uniform, never from where the words came from. The Asian share
+changes flavor and recognizability, never security. So unlike beer, "higher
+proof" buys you nothing here, and usability wins when it conflicts with cultural
+coverage (SPEC §3.9).
+
 ### Licensing
 
 - Code (`src/`, `scripts/`, `tests/`): MIT — see [`LICENSE`](LICENSE).
@@ -366,6 +394,17 @@ python scripts/make_booklet.py --size a5   # 產出 output/asian_diceware_7776_b
 **台灣／華語圈味**：`oolong`（烏龍茶）、`boba`（珍珠奶茶，源自台灣）、`typhoon`（颱風）、`ketchup`（閩南語）、`pinyin`（拼音）。
 
 完整清單（含每字語源、字典、備註）在 [`data/sources/loanwords_seed.csv`](data/sources/loanwords_seed.csv)。
+
+### 為什麼只有 ~3.8%？（當成酒精濃度來讀）
+
+3.8% 可以當成啤酒的 ABV 來讀，是刻意調出來的數字。這個比例的天花板，是英語實際吸收成「單一字典詞」的可辨識亞洲外來語有多少。把 OED、Merriam-Webster、Cambridge 翻過一輪，台灣與華語圈讀者認得的大約 330 個。其中 292 個 pin 入清單，另外約 40 個留作備援，可辨識的那口井其實已經快見底。
+
+要再往上拉（例如 10% ≈ 778 個），只會逼出兩條路，兩條我們都不要：
+
+- **用冷僻詞灌量**（`puttee`、`howdah`、`nilgai`、`maund`），多數人拼不出、唸不出、記不住。這會破壞這份清單想守住的 EFF 特性：抄得下來、唸得回去、不出錯的通行碼。
+- **改用羅馬拼音的官話或注音音節**，那是另一個專案。Hanyu Pinyin、Wade-Giles、Tongyong 在台灣並存，拼法會互撞又變得有歧義。詳見 SPEC §11。
+
+接著就是讓 ABV 比喻破功的地方：**比例高，通行碼並不會更強。** 不管是 `tofu` 還是 `the`，每個字都帶 12.925 bits。熵來自清單剛好 7776 字、每次擲骰均勻，與詞的來源無關。亞洲比例只改變風味與辨識度，不動安全性。所以跟啤酒不同，這裡「濃度高」買不到任何東西，比例與文化覆蓋衝突時，可用性優先（SPEC §3.9）。
 
 ### 授權
 
