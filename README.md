@@ -262,16 +262,16 @@ common English vocabulary, not a verbatim copy of a copyrighted compilation. See
 
 一份 Diceware 風格、與 EFF 相容的英文密語詞表，混合兩種來源：
 
-- 在台灣與華語圈熟悉、好拼好記的高頻英文字（降低記憶與輸入負擔）。
+- 在台灣與華語圈熟悉、易拼易記的高頻英文字（降低記憶與輸入負擔）。
 - 已被英文吸收、有字典背書的亞洲外來語（`tofu`、`typhoon`、`ramen`、`kimchi`、`karaoke`、`tsunami`、`boba` 等）。
 
-目標是恰好 **7,776 字（6^5）**，安全性與可用性對齊 [EFF Large Wordlist](https://www.eff.org/dice)，可當成直接替代品。六個字約 77.5 bits 的熵。
+目標是恰好 **7,776 字（6^5）**，在安全性與可用性上對應 [EFF Large Wordlist](https://www.eff.org/dice)，可作為直接替代品。六個字約 77.5 bits 的熵。
 
-> 「Diceware」是 Arnold Reinhold 的用語。本專案是 Diceware 風格／相容，並在 EFF 與 Reinhold 的先前成果之上發展。
+> 「Diceware」是 Arnold Reinhold 的用語。本專案屬 Diceware 風格、與其相容，並在 EFF 與 Reinhold 的先前成果之上發展。
 
 ### 狀態
 
-Pre-1.0（目前 v0.4）。建構 pipeline 端到端可跑，驗收測試 S1–S8 全過，wla 外部稽核通過。已 pin 入 292 個字典查證過的亞洲外來語（約占 7776 的 3.8%），7,776 字的頻率填充也經過品質強化（移除專有名詞、縮寫、雜訊）。到 v1.0 的剩餘工作見 [`SPEC.md`](SPEC.md) §9–§10。
+Pre-1.0（目前 v0.4）。建構 pipeline 可端到端執行，驗收測試 S1–S8 全數通過，wla 外部稽核通過。已 pin 入 292 個字典查證過的亞洲外來語（約占 7776 的 3.8%），7,776 字的頻率填充也經過品質強化（移除專有名詞、縮寫、雜訊）。至 v1.0 的剩餘工作見 [`SPEC.md`](SPEC.md) §9–§10。
 
 ### 快速開始
 
@@ -281,12 +281,12 @@ uv venv && uv pip install -e ".[dev]"
 .venv/bin/pytest                    # 驗收測試 S1–S8
 ```
 
-產物落在 `output/`：
+產物輸出於 `output/`：
 
 - `asian_diceware_7776.txt`：詞表，一行一個字。
 - `asian_diceware_7776_dice.txt`：`11111<TAB>word` 骰子對應（base-6，數字 1–6）。
 
-產生密語：擲 5 顆骰，讀成五位數，去 dice 檔查那一行，重複 6 次得 6 個字（約 77.5 bits）。或用密碼學亂數抽。務必用真亂數，不要自己挑。
+產生密語：擲 5 顆骰，讀成五位數，至 dice 檔查出該行，重複 6 次取得 6 個字（約 77.5 bits）。亦可使用密碼學亂數抽選。務必使用真亂數，不要自行挑選。
 
 ### 該用哪一份：7776 還是 1296
 
@@ -295,18 +295,18 @@ uv venv && uv pip install -e ".[dev]"
 | 詞表 | 字數 | 每字骰數 | 每字 bits | 六字 | 適合 |
 |---|---|---|---|---|---|
 | `7776` | 7,776（6⁵） | 5 | 12.925 | 約 77.5 bits | 正式密語，EFF 相容的直接替代品（**預設**）|
-| `1296` | 1,296（6⁴） | 4 | 10.340 | 約 62.0 bits | 測試、示範、教學。只要 4 顆骰，清單較短好印 |
+| `1296` | 1,296（6⁴） | 4 | 10.340 | 約 62.0 bits | 測試、示範、教學。僅需 4 顆骰，清單較短便於列印 |
 
-- **同一套配方**。每份都是 292 個 pin 的外來語，加上最高頻的填充字。`1296` 裡的每個字也都在 `7776` 裡，小表只是提早收尾，是 `7776` 的子集。
-- **正式使用就用 `7776`**。它達到 EFF 的強度目標（六字約 77.5 bits），每字只要 5 顆骰。
-- **`1296` 用熵換體積**。只要 4 顆骰、清單較短好印好看，代價是每組密語要更多字。用 `1296` 大約要 8 個字，才追得上 `7776` 的 6 個字。適合測試、示範、教學。
-- **骰子代碼各檔不同**。同一個字在兩份檔案的代碼不一樣，因為每份依各自的字母順序編號：`tofu` 在 1296 的骰子檔是 `6336`，在 7776 是 `63444`。查表時一定要對到你選的那一份骰子檔。
+- **同一套配方**。每份都是 292 個 pin 的外來語，加上最高頻的填充字。`1296` 中的每個字也都在 `7776` 中，小表提前截止，為 `7776` 的子集。
+- **正式使用採 `7776`**。其達到 EFF 的強度目標（六字約 77.5 bits），每字僅需 5 顆骰。
+- **`1296` 以熵換取體積**。僅需 4 顆骰、清單較短便於列印，代價是每組密語需要更多字。`1296` 約需 8 個字，方能達到 `7776` 6 個字的強度。適合測試、示範、教學。
+- **骰子代碼各檔不同**。同一個字在兩份檔案的代碼不同，因為每份依各自的字母順序編號：`tofu` 在 1296 的骰子檔為 `6336`，在 7776 為 `63444`。查表時務必對應你所選的那一份骰子檔。
 
-### 怎麼用這份表
+### 如何使用這份表
 
-**1. 用實體骰子（`7776`）**。擲 5 顆骰，由左到右讀成五位數（每顆 1–6），到 `asian_diceware_7776_dice.txt` 找那一行。重複 6 次，用 `-` 串起來。例如擲出 `6 3 4 4 4 → 63444` 對到 `tofu`，六次這樣的擲骰約 77.5 bits。
+**1. 使用實體骰子（`7776`）**。擲 5 顆骰，由左至右讀成五位數（每顆 1–6），於 `asian_diceware_7776_dice.txt` 查出該行。重複 6 次，以 `-` 連接。例如擲出 `6 3 4 4 4 → 63444` 對應 `tofu`，六次擲骰約 77.5 bits。
 
-**2. 用 Python（不靠骰子，且密碼學安全）**。
+**2. 使用 Python（不需骰子，且密碼學安全）**。
 
 ```python
 import secrets
@@ -317,15 +317,15 @@ phrase = "-".join(secrets.choice(words) for _ in range(6))
 print(phrase)        # 約 77.5 bits，例如 tofu-ramen-bazaar-oolong-gecko-haiku
 ```
 
-產密語請用 `secrets`（密碼學安全的亂數），不要用 `random`。
+產生密語請使用 `secrets`（密碼學安全的亂數），不要使用 `random`。
 
-**3. 工程師的快捷用法**。可跨平台的一行指令（macOS 與 Linux 都行，一樣用安全亂數）：
+**3. 工程師的快捷用法**。跨平台的一行指令（macOS 與 Linux 皆適用，同樣使用安全亂數）：
 
 ```bash
 python3 -c "import secrets;w=open('output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
 ```
 
-在 `~/.zshrc` 放個小函式（參數是字數，macOS 可接 `pbcopy` 複製）：
+在 `~/.zshrc` 加入一個函式（參數為字數，macOS 可接 `pbcopy` 複製）：
 
 ```bash
 asianpass() { python3 -c "import secrets;w=open('$HOME/asian-diceware/output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(${1:-6})))"; }
@@ -333,31 +333,31 @@ asianpass() { python3 -c "import secrets;w=open('$HOME/asian-diceware/output/asi
 # asianpass 8 | pbcopy -> 8 個字，複製到剪貼簿
 ```
 
-不想 clone 也行，直接從 GitHub 抓已發布的清單：
+若不想 clone，可直接從 GitHub 下載已發布的清單：
 
 ```bash
 curl -s https://raw.githubusercontent.com/anoni-net/asian-diceware/main/output/asian_diceware_7776.txt \
   | python3 -c "import secrets,sys;w=sys.stdin.read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
 ```
 
-Linux 也可以用 `shuf` 搭配安全的亂數來源：
+Linux 也可使用 `shuf` 搭配安全的亂數來源：
 `shuf -n6 --random-source=/dev/urandom output/asian_diceware_7776.txt | paste -sd- -`
-（macOS 內建沒有 `shuf`，`brew install coreutils` 後可用 `gshuf`）。
+（macOS 未內建 `shuf`，執行 `brew install coreutils` 後可使用 `gshuf`）。
 
-網站若硬要數字或符號，補一個上去就好。想更強就加字：每多一個 `7776` 的字約多 12.9 bits。
+網站若要求數字或符號，補上一個即可。需要更高強度時增加字數，每多一個 `7776` 的字約增加 12.9 bits。
 
-### 還可以怎麼用
+### 其他用途
 
-這張骰子表是一份「號碼↔字」的對照，所以不只能產密語：
+骰子表是一份號碼與字的對照，用途不限於產生密語：
 
-- **兩人之間的暗號**：見面時一起擲出一組字，各自記住。日後在電話或訊息裡互報這組字，確認對方是本人，不是被冒充。暗號要保密，最好一次性使用，或拆開用（你報前三個字，對方回後三個字）。
-- **把號碼唸成字、不會聽錯**：要核對像金鑰指紋、安全碼這類數字時，先用這張表把號碼換算成字（把數字寫成六進位，每五位查一個字），唸字比唸一長串數字不容易出錯。這也是 PGP word list 的做法。
+- **兩人之間的暗號**：見面時一同擲出一組字，各自記住。日後於電話或訊息中互報這組字，確認對方為本人、未遭冒充。暗號需保密，最好一次性使用，或拆開使用（你報前三個字，對方回後三個字）。
+- **將號碼唸成字、避免聽錯**：核對金鑰指紋、安全碼這類數字時，先以這張表將號碼換算成字（將數字寫成六進位，每五位查一個字）。唸字比唸一長串數字不易出錯，PGP word list 即採此法。
 
-這份表本身是公開的、不提供加密，只是讓共用的數值好唸好核對。安全與否取決於你怎麼交換與保管那個數值（當面交換、已驗證的管道、聽得出對方聲音）。
+此表本身公開，不提供加密，僅讓共用的數值便於唸讀與核對。安全與否取決於數值如何交換與保管（當面交換、已驗證的管道、可辨識對方聲音）。
 
 ### 印成小冊
 
-可以把 7776 詞表印成一本擲骰**查表小冊**，在活動現場發放，並放上你們社群的介紹與聯絡頁。詞表資料採 CC-BY-4.0，這樣做沒問題，記得在版權頁保留出處標註。
+可將 7776 詞表印成一本擲骰**查表小冊**，於活動現場發放，並附上社群的介紹與聯絡頁。詞表資料採 CC-BY-4.0，此用途在授權範圍內，請於版權頁保留出處標註。
 
 ```bash
 brew install --cask font-noto-sans-tc font-jetbrains-mono  # macOS：可嵌入的中文與等寬字型
@@ -365,9 +365,9 @@ uv pip install -e ".[booklet]"             # weasyprint + segno（QR）
 python scripts/make_booklet.py --size a5   # 產出 output/asian_diceware_7776_booklet_a5.pdf
 ```
 
-預設輸出 A5（約 36 頁，9 張 A4 對折騎馬釘）。要口袋版就加 `--size a6`。封面文案、聯絡方式、QR 連結改 `scripts/make_booklet.py` 開頭的 `CONFIG` 區塊。
+預設輸出 A5（約 36 頁，9 張 A4 對折騎馬釘）。需要口袋版時加上 `--size a6`。封面文案、聯絡方式、QR 連結於 `scripts/make_booklet.py` 開頭的 `CONFIG` 區塊修改。
 
-小冊會內嵌開源字型（Noto Sans TC 與 JetBrains Mono），中文在任何 PDF 看圖程式都顯示得出來。請先照上面安裝這些字型，不要依賴 PingFang 等系統字型（無法嵌入再散布）。macOS 上用 `./scripts/make_booklet.sh`，會順便補上 WeasyPrint 需要的 Homebrew 函式庫路徑（缺的話跑 `brew install pango`）。找不到開源中文字型時，腳本會出現警告，中文可能在他機顯示不出來。
+小冊內嵌開源字型（Noto Sans TC 與 JetBrains Mono），中文在任何 PDF 檢視程式皆能顯示。請先依上述步驟安裝這些字型，不要依賴 PingFang 等系統字型（無法嵌入後散布）。macOS 上使用 `./scripts/make_booklet.sh`，會一併補上 WeasyPrint 需要的 Homebrew 函式庫路徑（缺少時執行 `brew install pango`）。找不到開源中文字型時，腳本會發出警告，中文可能無法在他機顯示。
 
 ### 運作方式
 
@@ -375,40 +375,40 @@ python scripts/make_booklet.py --size a5   # 產出 output/asian_diceware_7776_b
 
 `collect → normalize → filter_quality → prune → assemble → validate`
 
-頻率排序來自 vendored 快照（`data/sources/freq_en.txt`，源自 [`wordfreq`](https://github.com/rspeer/wordfreq)）。外來語來自人工策展、字典查證的 `data/sources/loanwords_seed.csv`。被 pin 的外來語在剪枝全程受保護：prefix 衝突時剔除非 pin 的一方，兩個 pin 互相衝突則讓建構明確失敗（SPEC §5.1）。
+頻率排序來自 vendored 快照（`data/sources/freq_en.txt`，源自 [`wordfreq`](https://github.com/rspeer/wordfreq)）。外來語來自人工策展、字典查證的 `data/sources/loanwords_seed.csv`。被 pin 的外來語在剪枝全程受保護：prefix 衝突時剔除非 pin 的一方，兩個 pin 互相衝突則使建構明確失敗（SPEC §5.1）。
 
 ### 特色亞洲字詞
 
-詞表 pin 入 **292 個有字典背書的亞洲外來語**（約占 7776 的 3.8%，經 OED／Merriam-Webster／Cambridge 查證）。v0.4 從 161 擴充而來，採「辨識度優先」：偏好台灣與華語圈認得的詞，冷僻但有字典背書的詞留作 `hold` 不硬湊整數。依語源舉例：
+詞表 pin 入 **292 個有字典背書的亞洲外來語**（約占 7776 的 3.8%，經 OED、Merriam-Webster、Cambridge 查證）。v0.4 從 161 擴充而來，採「辨識度優先」原則：偏好台灣與華語圈可辨識的詞，冷僻但有字典背書的詞留作 `hold`，不以冷僻詞勉強湊到整數。依語源舉例：
 
 - **日語（102）**：`sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke` `karate` `judo` `ninja` `samurai` `kimono` `origami` `emoji` `manga` `anime` `tsunami` `zen` `umami` `onsen` `dashi` `yakitori` `katsu` `kawaii` `cosplay` `kombucha` `shiitake` `yakuza`。
-- **韓語（35）**：`kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo` `hallyu` `manhwa` `mukbang` `oppa` `galbi` `ramyeon` `doenjang` `bingsu`（不少是 OED 2021／2024／2026 韓流批次新增）。
-- **華語／Mandarin（16）**：`typhoon` `oolong` `ginseng` `qigong` `kowtow` `pinyin` `yin` `yang` `boba` `lychee` `mahjong` `wushu` `bao`。
+- **韓語（35）**：`kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo` `hallyu` `manhwa` `mukbang` `oppa` `galbi` `ramyeon` `doenjang` `bingsu`（不少是 OED 2021、2024、2026 韓流批次新增）。
+- **華語/Mandarin（16）**：`typhoon` `oolong` `ginseng` `qigong` `kowtow` `pinyin` `yin` `yang` `boba` `lychee` `mahjong` `wushu` `bao`。
 - **粵語（8）**：`wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam` `longan`。
-- **閩南語／台語（1）**：`ketchup`（沒錯，源頭可追到閩南語）。
-- **南亞／梵語（91）**：`yoga` `karma` `guru` `mantra` `nirvana` `avatar` `chakra` `naan` `biryani` `masala` `ghee` `chai` `lassi` `samosa` `tikka` `tandoor` `sitar` `sari` `paratha` `pakora` `cashmere` `cardamom` `henna` `cheetah` `mongoose` `bazaar` `pundit`。
-- **其他亞洲（馬來／東南亞等，39）**：`bamboo` `gong` `curry` `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko` `cockatoo` `pangolin` `sriracha` `sambal` `rambutan` `gamelan` `shampoo` `bungalow` `jungle`。
+- **閩南語/台語（1）**：`ketchup`（源頭可追溯至閩南語）。
+- **南亞/梵語（91）**：`yoga` `karma` `guru` `mantra` `nirvana` `avatar` `chakra` `naan` `biryani` `masala` `ghee` `chai` `lassi` `samosa` `tikka` `tandoor` `sitar` `sari` `paratha` `pakora` `cashmere` `cardamom` `henna` `cheetah` `mongoose` `bazaar` `pundit`。
+- **其他亞洲（馬來、東南亞等，39）**：`bamboo` `gong` `curry` `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko` `cockatoo` `pangolin` `sriracha` `sambal` `rambutan` `gamelan` `shampoo` `bungalow` `jungle`。
 
-**你可能沒發現這些其實是亞洲外來語**：`tycoon`（大亨）、`honcho`（老大）、`ketchup`、`shampoo`、`bungalow`、`jungle`、`loot`、`thug`、`cushy`、`atoll`、`gecko`、`cheetah`、`gong`、`avatar`、`guru`、`bazaar`、`dinghy`、`mongoose`。
+**未必看得出是亞洲外來語的字**：`tycoon`（大亨）、`honcho`（老大）、`ketchup`、`shampoo`、`bungalow`、`jungle`、`loot`、`thug`、`cushy`、`atoll`、`gecko`、`cheetah`、`gong`、`avatar`、`guru`、`bazaar`、`dinghy`、`mongoose`。
 
-**台灣／華語圈味**：`oolong`（烏龍茶）、`boba`（珍珠奶茶，源自台灣）、`typhoon`（颱風）、`ketchup`（閩南語）、`pinyin`（拼音）。
+**台灣、華語圈風味**：`oolong`（烏龍茶）、`boba`（珍珠奶茶，源自台灣）、`typhoon`（颱風）、`ketchup`（閩南語）、`pinyin`（拼音）。
 
 完整清單（含每字語源、字典、備註）在 [`data/sources/loanwords_seed.csv`](data/sources/loanwords_seed.csv)。
 
-### 為什麼只有 ~3.8%？（當成酒精濃度來讀）
+### 為什麼只有 ~3.8%？（以酒精濃度比喻）
 
-3.8% 可以當成啤酒的 ABV 來讀，是刻意調出來的數字。這個比例的天花板，是英語實際吸收成「單一字典詞」的可辨識亞洲外來語有多少。把 OED、Merriam-Webster、Cambridge 翻過一輪，台灣與華語圈讀者認得的大約 330 個。其中 292 個 pin 入清單，另外約 40 個留作備援，可辨識的那口井其實已經快見底。
+3.8% 可以比照啤酒的 ABV 來看，是刻意設定的數字。比例的上限，取決於英語實際吸收成「單一字典詞」的可辨識亞洲外來語數量。將 OED、Merriam-Webster、Cambridge 查證一輪，台灣與華語圈讀者可辨識的約 330 個。其中 292 個納入清單，另約 40 個留作備援，可辨識的詞源已接近上限。
 
-要再往上拉（例如 10% ≈ 778 個），只會逼出兩條路，兩條我們都不要：
+若要再提高（例如 10% ≈ 778 個），只會導向兩條路徑，兩者皆不採用：
 
-- **用冷僻詞灌量**（`puttee`、`howdah`、`nilgai`、`maund`），多數人拼不出、唸不出、記不住。這會破壞這份清單想守住的 EFF 特性：抄得下來、唸得回去、不出錯的通行碼。
-- **改用羅馬拼音的官話或注音音節**，那是另一個專案。Hanyu Pinyin、Wade-Giles、Tongyong 在台灣並存，拼法會互撞又變得有歧義。詳見 SPEC §11。
+- **以冷僻詞充數**（`puttee`、`howdah`、`nilgai`、`maund`），多數人無法拼寫、唸讀或記憶。此舉會破壞清單欲維持的 EFF 特性：能抄寫、能唸讀、不易出錯的通行碼。
+- **改用羅馬拼音的官話或注音音節**，屬於另一個專案。Hanyu Pinyin、Wade-Giles、Tongyong 在台灣並存，拼法相互衝突且產生歧義。詳見 SPEC §11。
 
-接著就是讓 ABV 比喻破功的地方：**比例高，通行碼並不會更強。** 不管是 `tofu` 還是 `the`，每個字都帶 12.925 bits。熵來自清單剛好 7776 字、每次擲骰均勻，與詞的來源無關。亞洲比例只改變風味與辨識度，不動安全性。所以跟啤酒不同，這裡「濃度高」買不到任何東西，比例與文化覆蓋衝突時，可用性優先（SPEC §3.9）。
+ABV 比喻在此失效：**比例提高，通行碼並不會更強。** 無論是 `tofu` 或 `the`，每個字都帶 12.925 bits。熵來自清單恰好 7776 字、每次擲骰均勻，與詞的來源無關。亞洲比例只改變風味與辨識度，不影響安全性。與啤酒不同，此處「濃度高」並無實益。比例與文化覆蓋衝突時，可用性優先（SPEC §3.9）。
 
 ### 授權
 
 - 程式碼（`src/`、`scripts/`、`tests/`）：MIT，見 [`LICENSE`](LICENSE)。
 - 詞表資料（`output/*`、`data/sources/loanwords_seed.csv`）：CC-BY-4.0，見 [`LICENSE-DATA`](LICENSE-DATA)。
 
-頻率快照僅作為排序輸入。詞表裡的字是常見英文詞彙，並非逐字複製受著作權保護的彙編。來源出處見 [`data/sources/README.md`](data/sources/README.md)。
+頻率快照僅作為排序輸入。詞表中的字是常見英文詞彙，並非逐字複製受著作權保護的彙編。來源出處見 [`data/sources/README.md`](data/sources/README.md)。
