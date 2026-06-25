@@ -259,8 +259,11 @@ index 7775 → `66666`).
 ## 9. Task breakdown (implementation order)
 
 - [x] **T1** Repo skeleton: `pyproject.toml`, ruff+pytest config, MIT `LICENSE`
-      + CC-BY-4.0 `LICENSE-DATA`, all module files, `data/`, `output/`. (CI
-      runner not yet wired — pending a remote; ruff + pytest run locally.)
+      + CC-BY-4.0 `LICENSE-DATA`, all module files, `data/`, `output/`.
+      GitHub Actions CI wired (`.github/workflows/ci.yml`): ruff (lint +
+      format) and pytest on Python 3.11/3.12/3.13, a reproducibility gate
+      (rebuild from vendored sources must match the committed lists +
+      S1–S8), and the `wla` external audit.
 - [x] **T2** `loanwords_seed.csv` verified: all pins confirmed against live
       OED/MW/Cambridge entries and flagged `verified` (89 original + 71 added,
       balanced across languages). Pin set is **161** (frozen at 160 in v0.2/v0.3,
@@ -299,9 +302,10 @@ index 7775 → `66666`).
   refilled with clean words; every final word reviewed; `wla` audit passes.
 - **v0.3.1 — ✅ done (tagged, PGP-signed).** Promoted `boba` (bubble tea, Taiwan
   origin) from `hold` to a pin → **161 pins**.
-- **v1.0 — in progress.** Remaining: (optional) printable PDF, set a remote +
-  publish CC-BY, tag v1.0. The 7776 list already passes all S1–S8, the advisory
-  loanword-share band, and the `wla` external audit.
+- **v1.0 — in progress.** Done: published to GitHub (`anoni-net/asian-diceware`,
+  CC-BY data) and CI wired (ruff + pytest + reproducibility + `wla`). Remaining:
+  (optional) printable PDF, then tag v1.0. The 7776 list already passes all
+  S1–S8, the advisory loanword-share band, and the `wla` external audit.
 - **v1.x** usability feedback, loanword-share tuning, AnonTicket integration test.
 
 ---

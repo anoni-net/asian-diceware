@@ -1,5 +1,7 @@
 # asian-diceware
 
+[![CI](https://github.com/anoni-net/asian-diceware/actions/workflows/ci.yml/badge.svg)](https://github.com/anoni-net/asian-diceware/actions/workflows/ci.yml)
+
 > This README is bilingual. The **English version comes first**; the
 > **正體中文 (Traditional Chinese) version follows below the English**.
 

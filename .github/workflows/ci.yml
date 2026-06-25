@@ -1,0 +1,84 @@
+# CI：與本地 scripts/ 同步的驗證。/ CI mirroring the local scripts/ checks.
+# - lint-test       : ruff (lint + format) + pytest（在 3.11/3.12/3.13）
+# - reproducibility : 從 vendored 來源重建詞表，確認與 commit 的清單逐位元相符 + S1–S8 稽核
+# - external-audit  : 用 Rust 的 wla（Word List Auditor）做外部稽核
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    name: lint & test (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install (editable + dev deps)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Ruff lint
+        run: ruff check .
+      - name: Ruff format check
+        run: ruff format --check .
+      - name: Pytest (S1-S8 on a 1296 build + pipeline behaviour)
+        run: pytest
+
+  reproducibility:
+    name: reproducible build & audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install (editable)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Rebuild both lists from vendored sources
+        run: |
+          python -m asian_diceware.cli all --target 7776
+          python -m asian_diceware.cli all --target 1296
+      - name: Reproducibility gate (committed lists must match a fresh build)
+        run: git diff --exit-code -- output/
+      - name: Validate audit (S1-S8) — 7776 and 1296
+        run: |
+          python -m asian_diceware.cli validate --target 7776
+          python -m asian_diceware.cli validate --target 1296
+
+  external-audit:
+    name: external audit (wla)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache wla binary
+        id: cache-wla
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/wla
+          key: wla-bin-v1
+      - name: Install wla (Word List Auditor)
+        if: steps.cache-wla.outputs.cache-hit != 'true'
+        run: cargo install --git https://github.com/sts10/wla
+      - name: Run wla on both lists
+        run: |
+          ~/.cargo/bin/wla output/asian_diceware_7776.txt
+          ~/.cargo/bin/wla output/asian_diceware_1296.txt

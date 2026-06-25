@@ -9,6 +9,16 @@ project aims to follow semantic versioning once it reaches v1.0.
 ## [Unreleased]
 
 ### 新增 / Added
+- **CI 驗證 / Continuous integration**（`.github/workflows/ci.yml`）：
+  - `lint-test`：ruff（lint + format）與 pytest，在 Python 3.11/3.12/3.13 上跑。
+  - `reproducibility`：從 vendored 來源重建 1296、7776 詞表，以 `git diff --exit-code`
+    確認與 commit 的清單逐位元相符，並跑 S1–S8 稽核。
+  - `external-audit`：用 Rust 的 `wla`（Word List Auditor）做外部稽核（binary 有 cache）。
+  README 加上 CI 狀態徽章。
+  GitHub Actions CI with three jobs: ruff + pytest matrix (3.11/3.12/3.13); a
+  reproducibility gate (rebuild from vendored sources must byte-match the
+  committed lists + S1–S8); and the `wla` external audit (binary cached). Added
+  a CI status badge to the README.
 - 專案骨架 / Repo skeleton：`pyproject.toml`（ruff + pytest）、MIT `LICENSE`、
   CC-BY-4.0 `LICENSE-DATA`、`CONTRIBUTING.md`。
 - 六階段建構 pipeline / Six-stage build pipeline（`collect`、`normalize`、
