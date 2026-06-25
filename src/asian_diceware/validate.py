@@ -8,10 +8,10 @@ entropy = log2(count)，絕不對浮點字面值做相等比較。
 nonzero if any HARD criterion fails. S7 follows the SPEC note: assert the count,
 then derive entropy = log2(count) — never float-compare a literal.
 
-外來語占比帶（S6，SPEC §3.9 約 120-180）以「參考值」回報：硬性 S6 不變量是
-set(seed_pins) ⊆ final（每個被 pin 的字都在）。種子清單擴充後，這個帶在 v1.0
-才成為發佈門檻。
-The loanword-share band (S6, SPEC §3.9 ~120-180) is reported as ADVISORY: the
+外來語占比帶（S6，SPEC §3.9 約 250-350，對應 ~4%）以「參考值」回報：硬性 S6
+不變量是 set(seed_pins) ⊆ final（每個被 pin 的字都在）。這個帶在 v1.0 才成為
+發佈門檻。
+The loanword-share band (S6, SPEC §3.9 ~250-350, the ~4% target) is ADVISORY: the
 hard S6 invariant is `set(seed_pins) ⊆ final` (every pinned word present). The
 band becomes a release gate for v1.0 once the seed list is expanded.
 """
@@ -29,7 +29,7 @@ from .common import data_dir, repo_root
 from .filter_quality import load_wordset
 
 WORD_RE = re.compile(r"^[a-z]{3,9}$")
-PIN_BAND = (120, 180)  # SPEC §3.9 v1.0 目標；種子擴充前僅為參考 / advisory until seed expanded.
+PIN_BAND = (250, 350)  # SPEC §3.9 ~4% target band (advisory) / v0.4 參考帶
 MAX_AVG_LEN = 7.5
 
 

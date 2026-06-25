@@ -1,11 +1,12 @@
 # SPEC.md — asian-diceware
 
-**Status:** v0.3 implemented (as of 2026-06-25). Pipeline + S1-S8 tests green and
-the `wla` external audit passes. The 161-word pin set is frozen and dictionary-
-verified, and the 7,776-word frequency fill has been quality-hardened (proper
-nouns, acronyms, slang, and junk removed; every final word reviewed). Remaining
-work toward v1.0 is tracked in §9 / §10. Began as a pre-implementation handoff
-spec; kept as the living design reference.
+**Status:** v0.4 implemented (as of 2026-06-25). Pipeline + S1-S8 tests green and
+the `wla` external audit passes. The pin set was expanded to **292 dictionary-
+verified Asian loanwords (~3.8% of 7776)** in v0.4, raising the Asian-feature
+share toward the ~4% goal; the 7,776-word frequency fill remains quality-hardened
+(proper nouns, acronyms, slang, and junk removed; every final word reviewed).
+Remaining work toward v1.0 is tracked in §9 / §10. Began as a pre-implementation
+handoff spec; kept as the living design reference.
 **Audience:** an implementer (human or Claude Code) starting from an empty repo.
 **This file is self-contained.** You do not need to read any external research
 report to implement the project. Everything required is here.
@@ -76,9 +77,20 @@ a six-word phrase ≈ 77.5 bits. The list size MUST be exactly 7776 so each
 8. Avoid romanization ambiguity: do NOT transliterate Mandarin ourselves
    (Hanyu Pinyin vs Wade-Giles vs Tongyong coexist in Taiwan). Only accept
    loanwords whose English spelling is already dictionary-fixed.
-9. Loanword share: v1.0 target ~120–180 pinned loanwords (~1.5–2.3%).
-   Long-term ceiling ~3–8% (~250–600). Usability beats cultural coverage when
-   they conflict.
+9. Loanword share: v0.4 target ~250–350 pinned loanwords (~3.2–4.5%), landed at
+   292 (~3.8%). Long-term ceiling ~3–8% (~250–600). Usability beats cultural
+   coverage when they conflict.
+   - **Recognizability-first (v0.4 decision).** Pulling the share to a round 4%
+     (311) was achievable only by including obscure dictionary-attested words
+     (Raj-era colonial vocabulary, weights/measures, rare fauna) a Taiwan /
+     Sinophone reader would not recognize. We chose recognizability over hitting
+     the exact percentage: pin the recognizable words (food, culture, yoga,
+     instruments), land honestly at 292, and keep the obscure-but-verified tail
+     as `decision=hold` in `loanwords_seed.csv` (promotable if a future release
+     wants the extra coverage). Note: pin share does not affect passphrase
+     entropy (12.925 bits/word comes from count=7776 + uniform roll +
+     prefix-freeness, independent of word origin); it only changes recognizability
+     and usability.
 
 When criteria conflict, resolution order is: **exclude on space/hyphen →
 exclude on length → exclude on strong spelling variant → resolve prefix
@@ -267,9 +279,10 @@ index 7775 → `66666`).
       S1–S8), and the `wla` external audit.
 - [x] **T2** `loanwords_seed.csv` verified: all pins confirmed against live
       OED/MW/Cambridge entries and flagged `verified` (89 original + 71 added,
-      balanced across languages). Pin set is **161** (frozen at 160 in v0.2/v0.3,
-      plus `boba` promoted in v0.3.1), within the ~120–180 target. ~64 candidates
-      parked as `hold` for review.
+      balanced across languages). Pin set grew 161 (v0.3.1) → **292** in v0.4 via
+      an agent-sourced, web-verified expansion (promoted 24 surviving holds + 84
+      new words across ja/sa/ko/misc/zh), landing at ~3.8%. Lower-recognizability
+      but dict-verified words are parked as `hold` (promotable).
 - [x] **T3** `collect.py`: load vendored freq snapshot + seed CSV → `candidates.csv`.
 - [x] **T4** `normalize.py`: case/ASCII/NFC/length filters.
 - [x] **T5** `filter_quality.py`: badwords + homophone/hard-spell + proper-noun
@@ -304,6 +317,11 @@ index 7775 → `66666`).
   refilled with clean words; every final word reviewed; `wla` audit passes.
 - **v0.3.1 — ✅ done (tagged, PGP-signed).** Promoted `boba` (bubble tea, Taiwan
   origin) from `hold` to a pin → **161 pins**.
+- **v0.4 — ✅ done.** Asian-loanword pin expansion 161 → **292 (~3.8%)** to raise
+  the feature share toward ~4%. Agent-sourced, web-verified (MW/Cambridge/OED)
+  across Japanese, South Asian, Korean, SE Asian, Chinese. Recognizability-first:
+  the obscure-but-verified tail is parked as `hold` rather than padded in (§3.9).
+  S1–S8 green, `wla`-compatible, no pinned-pinned prefix collisions.
 - **v1.0 — in progress.** Done: published to GitHub (`anoni-net/asian-diceware`,
   CC-BY data), CI wired (ruff + pytest + reproducibility + `wla`), and a
   printable booklet generator (`scripts/make_booklet.py`). Remaining: tag v1.0.
@@ -328,8 +346,9 @@ index 7775 → `66666`).
 ## 12. Caveats carried into implementation
 
 - ✅ RESOLVED (T2, 2026-06-24): dictionary backing is no longer just "claimed" —
-  all 160 pins were verified per-word against live OED/MW/Cambridge entries and
-  flagged `verified` in `loanwords_seed.csv`.
+  all pins were verified per-word against live OED/MW/Cambridge entries and
+  flagged `verified` in `loanwords_seed.csv`. The v0.4 expansion (→292 pins) was
+  likewise web-verified per word.
 - ✅ Addressed: the OED "addition year" claims (Korean 2021-09 / 2024-12 batches)
   were re-checked against live entries during T2.
 - `wla` is not yet installed/run (cargo absent here); the build uses the
@@ -337,4 +356,4 @@ index 7775 → `66666`).
   HTML Tidy, NOT sts10/tidy — do not use it. Confirm `wla` flags when run.
 - Sandbox network is allowlisted; all source data is vendored into
   `data/sources/` (freq snapshot + badwords) for offline reproducibility.
-- Pin set is kept well under 7776 (160) so assembly always has fill room.
+- Pin set is kept well under 7776 (292) so assembly always has fill room.
