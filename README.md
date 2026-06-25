@@ -48,6 +48,81 @@ To make a passphrase: roll 5 dice, read the result as a five-digit number, look
 it up in the dice file; repeat for 6 words (~77.5 bits). Or pick words with a
 cryptographic RNG. Always use true randomness; never hand-pick.
 
+### Choosing a list: 7776 vs 1296
+
+Both files come out of the same pipeline, so they share the same words; they
+differ only in how many.
+
+| List | Words | Dice/word | Bits/word | 6 words | Best for |
+|---|---|---|---|---|---|
+| `7776` | 7,776 (6⁵) | 5 | 12.925 | ~77.5 bits | Real passphrases — EFF-compatible drop-in (**default**) |
+| `1296` | 1,296 (6⁴) | 4 | 10.340 | ~62.0 bits | Tests / demos / teaching; 4-dice simplicity; a shorter card to print |
+
+- **Same recipe.** Each list is the 161 pinned loanwords plus the
+  highest-frequency fill. Every word in `1296` is also in `7776` — the small
+  list just stops sooner (a strict subset).
+- **Use `7776` for anything real.** It reaches the EFF strength target (6 words
+  ≈ 77.5 bits) and needs only 5 dice per word.
+- **`1296` trades entropy for size.** Only 4 dice and a shorter list to print or
+  eyeball, at the cost of more words per passphrase: it takes about 8 words from
+  `1296` to match 6 words from `7776`. Handy for tests, demos, and teaching the
+  method.
+- **Dice codes are per file.** The same word gets a different roll in each,
+  because each file is numbered within its own alphabetical order: `tofu` is
+  `6336` in the 1296 dice file but `63444` in the 7776 one. Always read the dice
+  file that matches the list you picked.
+
+### Making a passphrase
+
+**1. With physical dice (`7776`).** Roll 5 dice, read them left to right as a
+five-digit number (each die 1–6), and find that code in
+`asian_diceware_7776_dice.txt`. Repeat for 6 words and join them with `-`. For
+example, the rolls `6 3 4 4 4 → 63444` map to `tofu`; six such rolls give about
+77.5 bits.
+
+**2. In Python (no dice, cryptographically secure).**
+
+```python
+import secrets
+
+words = open("output/asian_diceware_7776.txt").read().split()
+assert len(words) == 7776
+phrase = "-".join(secrets.choice(words) for _ in range(6))
+print(phrase)        # ~77.5 bits, e.g. tofu-ramen-bazaar-oolong-gecko-haiku
+```
+
+Use `secrets` (a cryptographically secure RNG), never `random`, for passphrases.
+
+**3. The quick CLI way.** A portable one-liner (macOS + Linux, still a
+secure RNG):
+
+```bash
+python3 -c "import secrets;w=open('output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
+```
+
+Drop a helper in `~/.zshrc` (the argument is the word count; pipe to `pbcopy` to
+copy on macOS):
+
+```bash
+asianpass() { python3 -c "import secrets;w=open('$HOME/asian-diceware/output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(${1:-6})))"; }
+# asianpass            -> 6 words
+# asianpass 8 | pbcopy -> 8 words, copied to the clipboard
+```
+
+No clone needed — pull the published list straight from GitHub:
+
+```bash
+curl -s https://raw.githubusercontent.com/anoni-net/asian-diceware/main/output/asian_diceware_7776.txt \
+  | python3 -c "import secrets,sys;w=sys.stdin.read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
+```
+
+On Linux you can also use `shuf` with a secure source:
+`shuf -n6 --random-source=/dev/urandom output/asian_diceware_7776.txt | paste -sd- -`
+(stock macOS has no `shuf`; `brew install coreutils` gives you `gshuf`).
+
+Append a digit or symbol if a site demands one. Want more strength? Add words:
+each extra `7776` word is worth about 12.9 more bits.
+
 ### How it works
 
 A six-stage pipeline (see [`SPEC.md`](SPEC.md) §5):
@@ -134,6 +209,64 @@ uv venv && uv pip install -e ".[dev]"
 - `asian_diceware_7776_dice.txt`：`11111<TAB>word` 骰子對應（base-6，數字 1–6）。
 
 產生密語：擲 5 顆骰，讀成五位數，去 dice 檔查那一行，重複 6 次得 6 個字（約 77.5 bits）。或用密碼學亂數抽。務必用真亂數，不要自己挑。
+
+### 該用哪一份：7776 還是 1296
+
+兩個檔案由同一條 pipeline 產生，用字相同，差別只在數量。
+
+| 詞表 | 字數 | 每字骰數 | 每字 bits | 六字 | 適合 |
+|---|---|---|---|---|---|
+| `7776` | 7,776（6⁵） | 5 | 12.925 | 約 77.5 bits | 正式密語，EFF 相容的直接替代品（**預設**）|
+| `1296` | 1,296（6⁴） | 4 | 10.340 | 約 62.0 bits | 測試、示範、教學。只要 4 顆骰，清單較短好印 |
+
+- **同一套配方**。每份都是 161 個 pin 的外來語，加上最高頻的填充字。`1296` 裡的每個字也都在 `7776` 裡，小表只是提早收尾，是 `7776` 的子集。
+- **正式使用就用 `7776`**。它達到 EFF 的強度目標（六字約 77.5 bits），每字只要 5 顆骰。
+- **`1296` 用熵換體積**。只要 4 顆骰、清單較短好印好看，代價是每組密語要更多字。用 `1296` 大約要 8 個字，才追得上 `7776` 的 6 個字。適合測試、示範、教學。
+- **骰子代碼各檔不同**。同一個字在兩份檔案的代碼不一樣，因為每份依各自的字母順序編號：`tofu` 在 1296 的骰子檔是 `6336`，在 7776 是 `63444`。查表時一定要對到你選的那一份骰子檔。
+
+### 怎麼用這份表
+
+**1. 用實體骰子（`7776`）**。擲 5 顆骰，由左到右讀成五位數（每顆 1–6），到 `asian_diceware_7776_dice.txt` 找那一行。重複 6 次，用 `-` 串起來。例如擲出 `6 3 4 4 4 → 63444` 對到 `tofu`，六次這樣的擲骰約 77.5 bits。
+
+**2. 用 Python（不靠骰子，且密碼學安全）**。
+
+```python
+import secrets
+
+words = open("output/asian_diceware_7776.txt").read().split()
+assert len(words) == 7776
+phrase = "-".join(secrets.choice(words) for _ in range(6))
+print(phrase)        # 約 77.5 bits，例如 tofu-ramen-bazaar-oolong-gecko-haiku
+```
+
+產密語請用 `secrets`（密碼學安全的亂數），不要用 `random`。
+
+**3. 工程師的快捷用法**。可跨平台的一行指令（macOS 與 Linux 都行，一樣用安全亂數）：
+
+```bash
+python3 -c "import secrets;w=open('output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
+```
+
+在 `~/.zshrc` 放個小函式（參數是字數，macOS 可接 `pbcopy` 複製）：
+
+```bash
+asianpass() { python3 -c "import secrets;w=open('$HOME/asian-diceware/output/asian_diceware_7776.txt').read().split();print('-'.join(secrets.choice(w) for _ in range(${1:-6})))"; }
+# asianpass            -> 6 個字
+# asianpass 8 | pbcopy -> 8 個字，複製到剪貼簿
+```
+
+不想 clone 也行，直接從 GitHub 抓已發布的清單：
+
+```bash
+curl -s https://raw.githubusercontent.com/anoni-net/asian-diceware/main/output/asian_diceware_7776.txt \
+  | python3 -c "import secrets,sys;w=sys.stdin.read().split();print('-'.join(secrets.choice(w) for _ in range(6)))"
+```
+
+Linux 也可以用 `shuf` 搭配安全的亂數來源：
+`shuf -n6 --random-source=/dev/urandom output/asian_diceware_7776.txt | paste -sd- -`
+（macOS 內建沒有 `shuf`，`brew install coreutils` 後可用 `gshuf`）。
+
+網站若硬要數字或符號，補一個上去就好。想更強就加字：每多一個 `7776` 的字約多 12.9 bits。
 
 ### 運作方式
 

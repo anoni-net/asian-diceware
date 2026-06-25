@@ -19,6 +19,11 @@ project aims to follow semantic versioning once it reaches v1.0.
   reproducibility gate (rebuild from vendored sources must byte-match the
   committed lists + S1–S8); and the `wla` external audit (binary cached). Added
   a CI status badge to the README.
+- **使用教學 / Usage guide**（README）：新增「7776 vs 1296 該用哪一份」比較表，
+  以及「怎麼用這份表」教學（實體骰子、Python 的 `secrets` 範例、命令列快捷用法）。
+  Added a README section comparing the 7776 and 1296 lists (when to use each)
+  and a "Making a passphrase" tutorial: physical dice, a Python `secrets`
+  example, and quick command-line one-liners.
 - 專案骨架 / Repo skeleton：`pyproject.toml`（ruff + pytest）、MIT `LICENSE`、
   CC-BY-4.0 `LICENSE-DATA`、`CONTRIBUTING.md`。
 - 六階段建構 pipeline / Six-stage build pipeline（`collect`、`normalize`、
