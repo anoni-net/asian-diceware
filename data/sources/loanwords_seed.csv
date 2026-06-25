@@ -21,8 +21,9 @@ word,lang,length,dict,flags,decision,notes
 #   - Anything with a space/hyphen in its normal English form is excluded
 #     here at source (we never store the space form). Listed below under
 #     EXCLUDED for traceability only.
-#   - Target v1.0 pin count: ~120-180. This seed has ~150 pin candidates;
-#     trim/expand after dictionary verification (task T2).
+#   - Target pin count: ~250-350 (~4% of 7776), set in v0.4. Words tagged
+#     decision=hold below the v0.4 banner are dict-verified but recognizability-
+#     deferred (promotable later). Earlier v1.0 target was ~120-180.
 #   - "dict" claims are from OED/MW editorial articles + entries but MUST be
 #     re-verified per-word before v1.0 (see SPEC sec 9 + Caveats).
 # ============================================================================
@@ -38,7 +39,7 @@ wasabi,ja,6,mw,verified,pin,
 tempura,ja,7,mw,verified,pin,
 bento,ja,5,camb,verified,pin,standalone headword in cambridge (mw lists only bento box)
 mochi,ja,5,mw,verified,pin,
-sake,ja,4,oed,variant,hold,homograph with English "sake" (for the sake of) — may confuse; consider exclude
+sake,ja,4,oed,variant,exclude,homograph with English "sake" (for the sake of) — may confuse; consider exclude | v0.4 exclude: homograph of English 'for the sake of'
 katana,ja,6,mw,verified,pin,
 tatami,ja,6,mw|camb,verified,pin,
 shogun,ja,6,mw,verified,pin,common noun headword also famous as book/TV title
@@ -65,14 +66,14 @@ sensei,ja,6,mw,verified,pin,
 sumo,ja,4,mw,verified,pin,
 umami,ja,5,mw,verified,pin,
 teriyaki,ja,8,mw,verified,pin,
-edamame,ja,7,mw,check,hold,confirm OED/MW entry
-wagyu,ja,5,mw,check,hold,confirm MW entry
+edamame,ja,7,mw,verified,pin,confirm OED/MW entry | promoted v0.4 (dict re-verified)
+wagyu,ja,5,mw,verified,pin,confirm MW entry | promoted v0.4 (dict re-verified)
 rickshaw,ja,8,mw,verified,pin,rickshaw is primary headword; ricksha is a variant
 skosh,ja,5,mw,verified,pin,from sukoshi; MW backed
 koi,ja,3,mw,short|verified,pin,3 letters; clean fish headword no homograph or offensive issue
 sake_drink,ja,4,oed,variant,exclude,duplicate of sake row — placeholder, do not use
-tonkotsu,ja,8,oed,check,hold,OED 2024-03 addition — verify
-donburi,ja,7,oed,check,hold,OED 2024-03 addition — verify
+tonkotsu,ja,8,oed,check,exclude,OED 2024-03 addition — verify | v0.4 exclude: not a MW/Cambridge headword
+donburi,ja,7,oed,check,exclude,OED 2024-03 addition — verify | v0.4 exclude: not a MW/Cambridge headword
 
 # ---- Chinese / Cantonese / Hokkien (zh/yue/nan) ----
 wok,yue,3,mw|camb,short|verified,pin,3 letters; Cantonese origin
@@ -81,17 +82,17 @@ typhoon,zh,7,mw|camb,verified,pin,
 ketchup,nan,7,mw,verified,pin,disputed etymology (Hokkien) but solid English word; mw headword ketchup; catsup is the variant
 ginseng,zh,7,mw,verified,pin,
 oolong,zh,6,mw|camb,verified,pin,
-lychee,zh,6,oed,variant,hold,variants litchi/lichee — pick one or exclude
+lychee,zh,6,oed,verified,pin,variants litchi/lichee — pick one or exclude | promoted v0.4 (dict re-verified)
 kowtow,zh,6,mw|camb,verified,pin,
 sampan,zh,6,mw|camb,verified,pin,
 pekoe,zh,5,mw|camb,verified,pin,tea grade
 cheongsam,yue,9,mw|camb,verified,pin,9 letters — at limit
-bao,zh,3,mw,short|variant,hold,3 letters; also means steamed bun — recent
+bao,zh,3,mw,verified,pin,3 letters; also means steamed bun — recent | promoted v0.4 (dict re-verified)
 boba,zh,4,mw|camb,verified,pin,bubble tea 波霸/珍奶; Taiwan origin; MW+Cambridge headword
-tao,zh,3,oed,short|variant,hold,variant dao; also philosophical — consider exclude
-ginkgo,zh,6,oed,variant,hold,variant gingko (metathesis) — common misspelling risk
-pakchoi,yue,7,oed,variant,hold,implosion of "pak choi"; usually spaced — verify solid form
-mahjong,zh,7,oed,variant,hold,variants mah-jongg/majong — verify solid form acceptance
+tao,zh,3,oed,short|variant,exclude,variant dao; also philosophical — consider exclude | v0.4 exclude: Tao/Dao romanization variants; proper-concept; homograph
+ginkgo,zh,6,oed,variant,exclude,variant gingko (metathesis) — common misspelling risk | v0.4 exclude: MW marks Japanese-derived; gingko metathesis-variant risk
+pakchoi,yue,7,oed,variant,exclude,implosion of "pak choi"; usually spaced — verify solid form | v0.4 exclude: dictionary form is two-word 'pak choi'
+mahjong,zh,7,oed,verified,pin,variants mah-jongg/majong — verify solid form acceptance | promoted v0.4 (dict re-verified)
 
 # ---- Korean (ko) : OED 2021-09 (+26) and 2024-12 (+7) batches ----
 kimchi,ko,6,mw|camb,verified,pin,mw headword kimchi; kimchee is the variant
@@ -102,14 +103,14 @@ mukbang,ko,7,oed|mw,verified,pin,OED 2021-09
 bulgogi,ko,7,oed|mw,verified,pin,
 banchan,ko,7,oed,verified,pin,OED 2021-09
 japchae,ko,7,oed,verified,pin,OED 2021-09
-galbi,ko,5,oed,check,hold,verify
-kimbap,ko,6,oed,variant,hold,variant gimbap
-chimaek,ko,7,oed,check,hold,OED 2021-09; verify
+galbi,ko,5,oed,verified,pin,verify | promoted v0.4 (dict re-verified)
+kimbap,ko,6,oed,verified,pin,variant gimbap | promoted v0.4 (dict re-verified)
+chimaek,ko,7,oed,verified,pin,OED 2021-09; verify | promoted v0.4 (dict re-verified)
 daebak,ko,6,oed,verified,pin,OED 2021-09
 aegyo,ko,5,oed,verified,pin,OED 2021-09
-noona,ko,5,oed,check,hold,verify
+noona,ko,5,oed,verified,pin,verify | promoted v0.4 (dict re-verified)
 oppa,ko,4,oed,verified,pin,OED 2021-09
-unni,ko,4,oed,check,hold,verify
+unni,ko,4,oed,verified,pin,verify | promoted v0.4 (dict re-verified)
 manhwa,ko,6,oed,verified,pin,OED 2021-09
 hallyu,ko,6,oed,verified,pin,OED 2021-09
 trot,ko,4,oed,variant,exclude,homograph with English trot — exclude
@@ -166,7 +167,7 @@ gymkhana,misc,8,camb,verified,pin,
 
 # ============================================================================
 # v0.2 EXPANSION — agent-researched, dictionary-verified (OED/MW/Cambridge).
-#   pin  = high-confidence, prefix-free-safe, balanced across languages (~160 cap).
+#   pin  = high-confidence, prefix-free-safe, balanced across languages (v0.2 ~160 cap; raised in v0.4).
 #   hold = med-confidence, high-conf beyond cap, or prefix-collision loser; T2 reviews.
 # ============================================================================
 aikido,ja,6,camb,verified,pin,Japanese martial art
@@ -241,51 +242,187 @@ qigong,zh,6,mw,verified,pin,Chinese breathing-exercise system
 yang,zh,4,camb,verified,pin,active cosmic principle
 yin,zh,3,camb,verified,pin,passive cosmic principle
 # --- hold (review in T2) ---
-shiitake,ja,8,mw,clean,hold,high-conf overflow (>pin cap); edible dark mushroom
-shoji,ja,5,camb,clean,hold,high-conf overflow (>pin cap); paper sliding screen
-soba,ja,4,camb,clean,hold,high-conf overflow (>pin cap); buckwheat noodles
-torii,ja,5,mw,clean,hold,high-conf overflow (>pin cap); Shinto shrine gateway
-yakuza,ja,6,mw,clean,hold,high-conf overflow (>pin cap); Japanese organized-crime syndicate
-yuzu,ja,4,camb,clean,hold,high-conf overflow (>pin cap); Japanese citrus fruit
-zazen,ja,5,mw,clean,hold,high-conf overflow (>pin cap); seated Zen meditation
+shiitake,ja,8,mw,clean,pin,promoted v0.4 (dict-verified, recognizable); edible dark mushroom
+shoji,ja,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); paper sliding screen
+soba,ja,4,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); buckwheat noodles
+torii,ja,5,mw,clean,pin,promoted v0.4 (dict-verified, recognizable); Shinto shrine gateway
+yakuza,ja,6,mw,clean,pin,promoted v0.4 (dict-verified, recognizable); Japanese organized-crime syndicate
+yuzu,ja,4,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); Japanese citrus fruit
+zazen,ja,5,mw,clean,pin,promoted v0.4 (dict-verified, recognizable); seated Zen meditation
 tea,nan,3,camb,variant,hold,prefix-collides with candidate teak; pin at most one; beverage; from Min-nan te
-patchouli,sa,9,camb,clean,hold,high-conf overflow (>pin cap); aromatic plant and oil (Tamil)
-pukka,sa,5,camb,clean,hold,high-conf overflow (>pin cap); genuine or proper (Hindi)
-raita,sa,5,camb,clean,hold,high-conf overflow (>pin cap); yogurt side dish (Hindi)
-roti,sa,4,camb,clean,hold,high-conf overflow (>pin cap); unleavened flatbread (Hindi)
-rupee,sa,5,camb,clean,hold,high-conf overflow (>pin cap); Indian currency unit
-samosa,sa,6,camb,clean,hold,high-conf overflow (>pin cap); fried stuffed pastry
-sari,sa,4,camb,clean,hold,high-conf overflow (>pin cap); draped Indian garment (Hindi)
-sitar,sa,5,camb,clean,hold,high-conf overflow (>pin cap); long-necked stringed instrument
-stupa,sa,5,camb,clean,hold,high-conf overflow (>pin cap); Buddhist domed shrine (Sanskrit)
-sutra,sa,5,mw,clean,hold,high-conf overflow (>pin cap); scriptural aphorism (Sanskrit)
-swami,sa,5,camb,clean,hold,high-conf overflow (>pin cap); Hindu religious teacher
-tabla,sa,5,camb,clean,hold,high-conf overflow (>pin cap); Indian hand drums (Hindi)
-tandoor,sa,7,camb,clean,hold,high-conf overflow (>pin cap); cylindrical clay oven (Urdu)
-teak,sa,4,camb,clean,hold,high-conf overflow (>pin cap); tropical hardwood tree (Malayalam)
-tikka,sa,5,camb,clean,hold,high-conf overflow (>pin cap); marinated grilled meat (Punjabi)
-vindaloo,sa,8,camb,clean,hold,high-conf overflow (>pin cap); hot spicy curry dish
-banzai,ja,6,mw,check,hold,Japanese cheer; battle-cry connotation
-daikon,ja,6,camb,check,hold,large white radish; also a name
-jujitsu,ja,7,camb,check,hold,martial art; variants jujutsu/jiu-jitsu
-noh,ja,3,mw,check,hold,classical dance-drama; often capitalized
-sayonara,ja,8,mw,check,hold,goodbye; slightly dated/jocular register
-senpai,ja,6,oed,check,hold,senior or mentor; OED-only
-tonkatsu,ja,8,oed,check,hold,breaded pork cutlet; OED-attested only
-yukata,ja,6,oed,check,hold,light cotton robe; OED-attested only
-amok,misc,4,camb,check,hold,Malay; mostly in "run amok"
-boondocks,misc,9,camb,check,hold,remote backcountry; Tagalog bundok plural
-pandan,misc,6,camb,check,hold,fragrant culinary leaf (Malay)
-betel,sa,5,camb,check,hold,chewed stimulant leaf (Malayalam)
-calico,sa,6,camb,check,hold,plain cotton cloth; from Calicut
-chapati,sa,7,mw,check,hold,thin griddle flatbread (Hindi)
-cheroot,sa,7,camb,check,hold,square-cut cigar (Tamil)
-chintz,sa,6,camb,check,hold,glazed printed cotton (Hindi)
-crore,sa,5,camb,check,hold,ten million (Hindi)
-lakh,sa,4,camb,check,hold,hundred thousand (Hindi)
-prana,sa,5,mw,check,hold,vital life breath (Sanskrit)
-samsara,sa,7,camb,check,hold,cycle of rebirth (Sanskrit)
-toddy,sa,5,camb,check,hold,fermented palm-sap drink (Hindi)
-souchong,yue,8,mw,check,hold,black tea variety (Cantonese)
-taipan,yue,6,mw,check,hold,business magnate; also Australian snake
-wushu,zh,5,camb,check,hold,Chinese martial arts
+patchouli,sa,9,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); aromatic plant and oil (Tamil)
+pukka,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); genuine or proper (Hindi)
+raita,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); yogurt side dish (Hindi)
+roti,sa,4,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); unleavened flatbread (Hindi)
+rupee,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); Indian currency unit
+samosa,sa,6,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); fried stuffed pastry
+sari,sa,4,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); draped Indian garment (Hindi)
+sitar,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); long-necked stringed instrument
+stupa,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); Buddhist domed shrine (Sanskrit)
+sutra,sa,5,mw,clean,pin,promoted v0.4 (dict-verified, recognizable); scriptural aphorism (Sanskrit)
+swami,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); Hindu religious teacher
+tabla,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); Indian hand drums (Hindi)
+tandoor,sa,7,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); cylindrical clay oven (Urdu)
+teak,sa,4,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); tropical hardwood tree (Malayalam)
+tikka,sa,5,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); marinated grilled meat (Punjabi)
+vindaloo,sa,8,camb,clean,pin,promoted v0.4 (dict-verified, recognizable); hot spicy curry dish
+banzai,ja,6,mw,check,exclude,Japanese cheer; battle-cry connotation | v0.4 exclude: WWII battle-cry / loaded
+daikon,ja,6,camb,verified,pin,large white radish; also a name | promoted v0.4 (dict re-verified)
+jujitsu,ja,7,camb,verified,pin,martial art; variants jujutsu/jiu-jitsu | promoted v0.4 (dict re-verified)
+noh,ja,3,mw,check,exclude,classical dance-drama; often capitalized | v0.4 exclude: homophone of 'no'; low recognizability
+sayonara,ja,8,mw,verified,pin,goodbye; slightly dated/jocular register | promoted v0.4 (dict re-verified)
+senpai,ja,6,oed,check,exclude,senior or mentor; OED-only | v0.4 exclude: no formal dictionary headword
+tonkatsu,ja,8,oed,check,exclude,breaded pork cutlet; OED-attested only | v0.4 exclude: no standalone MW/Cambridge headword
+yukata,ja,6,oed,check,exclude,light cotton robe; OED-attested only | v0.4 exclude: not a MW/Cambridge headword
+amok,misc,4,camb,check,exclude,Malay; mostly in "run amok" | v0.4 exclude: bound to fixed phrase 'run amok'
+boondocks,misc,9,camb,verified,pin,remote backcountry; Tagalog bundok plural | promoted v0.4 (dict re-verified)
+pandan,misc,6,camb,verified,pin,fragrant culinary leaf (Malay) | promoted v0.4 (dict re-verified)
+betel,sa,5,camb,verified,pin,chewed stimulant leaf (Malayalam) | promoted v0.4 (dict re-verified)
+calico,sa,6,camb,verified,pin,plain cotton cloth; from Calicut | promoted v0.4 (dict re-verified)
+chapati,sa,7,mw,verified,pin,thin griddle flatbread (Hindi) | promoted v0.4 (dict re-verified)
+cheroot,sa,7,camb,check,hold,v0.4 deferred (recognizability-first); MW/Camb-attested, promotable
+chintz,sa,6,camb,verified,pin,glazed printed cotton (Hindi) | promoted v0.4 (dict re-verified)
+crore,sa,5,camb,check,hold,v0.4 deferred (recognizability-first); Camb-attested, promotable
+lakh,sa,4,camb,check,hold,v0.4 deferred (recognizability-first); Camb-attested, promotable
+prana,sa,5,mw,verified,pin,vital life breath (Sanskrit) | promoted v0.4 (dict re-verified)
+samsara,sa,7,camb,verified,pin,cycle of rebirth (Sanskrit) | promoted v0.4 (dict re-verified)
+toddy,sa,5,camb,verified,pin,fermented palm-sap drink (Hindi) | promoted v0.4 (dict re-verified)
+souchong,yue,8,mw,verified,pin,black tea variety (Cantonese) | promoted v0.4 (dict re-verified)
+taipan,yue,6,mw,check,exclude,business magnate; also Australian snake | v0.4 exclude: homograph with taipan snake
+wushu,zh,5,camb,verified,pin,Chinese martial arts | promoted v0.4 (dict re-verified)
+
+# ============================================================================
+# v0.4 EXPANSION — agent-sourced, web-verified (MW/Cambridge/OED), 2026-06.
+#   Raise Asian-loanword pin share toward ~4%. decision=pin are recognizable
+#   (food/culture/yoga/instrument); decision=hold are dict-verified but lower
+#   recognizability, deferred under the recognizability-first rule (promotable).
+# ============================================================================
+
+# ja new (28 pin)
+onsen,ja,5,mw,verified,pin,hot spring [v0.4]
+yakitori,ja,8,mw,verified,pin,grilled chicken skewers [v0.4]
+sukiyaki,ja,8,mw,verified,pin,hot-pot beef dish [v0.4]
+dashi,ja,5,mw,verified,pin,soup stock [v0.4]
+katsu,ja,5,mw,verified,pin,breaded fried cutlet [v0.4]
+kawaii,ja,6,mw,verified,pin,cute aesthetic [v0.4]
+cosplay,ja,7,mw,verified,pin,costume role-play [v0.4]
+kaiju,ja,5,mw,verified,pin,giant monster [v0.4]
+shoyu,ja,5,mw,verified,pin,soy sauce [v0.4]
+wakame,ja,6,mw,verified,pin,edible seaweed [v0.4]
+enoki,ja,5,mw,verified,pin,thin mushroom [v0.4]
+sencha,ja,6,camb,verified,pin,green tea [v0.4]
+azuki,ja,5,camb,verified,pin,red bean [v0.4]
+fugu,ja,4,camb,verified,pin,pufferfish [v0.4]
+nigiri,ja,6,camb,verified,pin,hand-pressed sushi [v0.4]
+nabe,ja,4,mw,verified,pin,hot pot [v0.4]
+santoku,ja,7,mw,verified,pin,kitchen knife [v0.4]
+kombucha,ja,8,mw,verified,pin,fermented tea [v0.4]
+tanuki,ja,6,mw,verified,pin,raccoon dog [v0.4]
+kanban,ja,6,mw,verified,pin,workflow board [v0.4]
+reiki,ja,5,mw,verified,pin,energy healing [v0.4]
+kintsugi,ja,8,camb,verified,pin,golden-repair craft [v0.4]
+tsundoku,ja,8,camb,verified,pin,book-hoarding [v0.4]
+bokeh,ja,5,mw,verified,pin,photographic blur [v0.4]
+koto,ja,4,mw,verified,pin,Japanese zither [v0.4]
+shamisen,ja,8,mw,verified,pin,three-string lute [v0.4]
+washi,ja,5,mw,verified,pin,handmade paper [v0.4]
+obi,ja,3,mw,verified,pin,kimono sash [v0.4]
+# ja new (6 deferred hold)
+kombu,ja,5,mw,verified,hold,edible kelp; prefix-collides kombucha [v0.4 deferred: recognizability-first]
+kaiseki,ja,7,mw,verified,hold,multi-course meal [v0.4 deferred: recognizability-first]
+netsuke,ja,7,mw,verified,hold,carved toggle [v0.4 deferred: recognizability-first]
+butoh,ja,5,mw,verified,hold,avant-garde dance [v0.4 deferred: recognizability-first]
+keiretsu,ja,8,mw,verified,hold,firm alliance [v0.4 deferred: recognizability-first]
+zaibatsu,ja,8,mw,verified,hold,business conglomerate [v0.4 deferred: recognizability-first]
+# ko new (5 pin)
+ramyeon,ko,7,oed,verified,pin,Korean instant noodles [v0.4]
+doenjang,ko,8,oed,verified,pin,fermented soybean paste [v0.4]
+bingsu,ko,6,oed,verified,pin,shaved-ice dessert [v0.4]
+sunbae,ko,6,oed,verified,pin,senior or mentor [v0.4]
+ajumma,ko,6,oed,verified,pin,middle-aged woman [v0.4]
+# se/misc new (13 pin)
+sriracha,misc,8,mw,verified,pin,Thai chili hot sauce [v0.4]
+sambal,misc,6,mw,verified,pin,chili paste condiment [v0.4]
+rambutan,misc,8,mw,verified,pin,hairy red tropical fruit [v0.4]
+agar,misc,4,mw,verified,pin,seaweed gelling agent [v0.4]
+dugong,misc,6,mw,verified,pin,sea-cow mammal [v0.4]
+cassowary,misc,9,mw,verified,pin,large flightless bird [v0.4]
+rendang,misc,7,oed,verified,pin,slow-cooked beef dish [v0.4]
+laksa,misc,5,oed,verified,pin,spicy noodle soup [v0.4]
+gamelan,misc,7,mw,verified,pin,percussion orchestra [v0.4]
+carabao,misc,7,mw,verified,pin,water buffalo [v0.4]
+kapok,misc,5,mw,verified,pin,silky tree fibre [v0.4]
+kris,misc,4,mw,verified,pin,wavy Malay dagger [v0.4]
+ikat,misc,4,mw,verified,pin,tie-dye textile [v0.4]
+# se/misc new (7 deferred hold)
+kampong,misc,7,mw,verified,hold,Malay village [v0.4 deferred: recognizability-first]
+salak,misc,5,mw,verified,hold,snake fruit [v0.4 deferred: recognizability-first]
+proa,misc,4,mw,verified,hold,outrigger boat [v0.4 deferred: recognizability-first]
+parang,misc,6,mw,verified,hold,Malay machete [v0.4 deferred: recognizability-first]
+abaca,misc,5,mw,verified,hold,Manila hemp fibre [v0.4 deferred: recognizability-first]
+wayang,misc,6,mw,verified,hold,shadow puppet play [v0.4 deferred: recognizability-first]
+ronggeng,misc,8,oed,verified,hold,Malay couples dance [v0.4 deferred: recognizability-first]
+# zh/yue new (1 pin)
+longan,yue,6,camb,verified,pin,dragon-eye fruit [v0.4]
+# sa new (37 pin)
+chai,sa,4,camb,verified,pin,spiced milk tea [v0.4]
+yogi,sa,4,camb,verified,pin,yoga practitioner [v0.4]
+cashmere,sa,8,camb,verified,pin,soft goat wool [v0.4]
+cardamom,sa,8,camb,verified,pin,aromatic spice pod [v0.4]
+henna,sa,5,camb,verified,pin,reddish plant dye [v0.4]
+catamaran,sa,9,camb,verified,pin,twin-hulled boat [v0.4]
+banyan,sa,6,camb,verified,pin,rooting fig tree [v0.4]
+lassi,sa,5,camb,verified,pin,yogurt drink [v0.4]
+paratha,sa,7,camb,verified,pin,fried flatbread [v0.4]
+pakora,sa,6,mw|camb,verified,pin,vegetable fritter [v0.4]
+kofta,sa,5,camb,verified,pin,spiced meatball [v0.4]
+bhaji,sa,5,mw|camb,verified,pin,vegetable fritter [v0.4]
+tantra,sa,6,camb,verified,pin,esoteric ritual text [v0.4]
+raga,sa,4,camb,verified,pin,Indian melodic mode [v0.4]
+bhangra,sa,7,camb,verified,pin,Punjabi dance music [v0.4]
+mehndi,sa,6,camb,verified,pin,henna body art [v0.4]
+bindi,sa,5,camb,verified,pin,forehead dot [v0.4]
+kurta,sa,5,camb,verified,pin,collarless shirt [v0.4]
+dhoti,sa,5,mw|camb,verified,pin,wrapped waist garment [v0.4]
+sadhu,sa,5,camb,verified,pin,Hindu holy man [v0.4]
+ganja,sa,5,camb,verified,pin,cannabis preparation [v0.4]
+samadhi,sa,7,mw,verified,pin,meditative absorption [v0.4]
+neem,sa,4,camb,verified,pin,medicinal tree [v0.4]
+jaggery,sa,7,camb,verified,pin,unrefined cane sugar [v0.4]
+copra,sa,5,camb,verified,pin,dried coconut flesh [v0.4]
+pariah,sa,6,camb,verified,pin,social outcast [v0.4]
+paisa,sa,5,camb,verified,pin,rupee subunit coin [v0.4]
+myna,sa,4,mw,verified,pin,talking Asian bird [v0.4]
+jodhpur,sa,7,mw,verified,pin,riding trouser [v0.4]
+dungaree,sa,8,mw,verified,pin,coarse cotton cloth [v0.4]
+tiffin,sa,6,camb,verified,pin,light midday meal [v0.4]
+idli,sa,4,camb,verified,pin,steamed rice cake [v0.4]
+puri,sa,4,camb,verified,pin,deep-fried bread [v0.4]
+achar,sa,5,mw,verified,pin,pickle relish [v0.4]
+saag,sa,4,camb,verified,pin,cooked leafy greens [v0.4]
+ahimsa,sa,6,mw,verified,pin,nonviolence principle [v0.4]
+moksha,sa,6,mw,verified,pin,spiritual liberation [v0.4]
+# sa new (23 deferred hold)
+dal,sa,3,camb,verified,hold,lentil dish; prefix-collides dalgona [v0.4 deferred: recognizability-first]
+lungi,sa,5,camb,verified,hold,waist wrap cloth [v0.4 deferred: recognizability-first]
+wallah,sa,6,camb,verified,hold,task-associated person [v0.4 deferred: recognizability-first]
+nabob,sa,5,camb,verified,hold,rich powerful person [v0.4 deferred: recognizability-first]
+sepoy,sa,5,camb,verified,hold,colonial Indian soldier [v0.4 deferred: recognizability-first]
+dacoit,sa,6,camb,verified,hold,armed bandit [v0.4 deferred: recognizability-first]
+mahout,sa,6,camb,verified,hold,elephant keeper [v0.4 deferred: recognizability-first]
+purdah,sa,6,camb,verified,hold,seclusion of women [v0.4 deferred: recognizability-first]
+chukka,sa,6,camb,verified,hold,polo period or boot [v0.4 deferred: recognizability-first]
+puttee,sa,6,mw,verified,hold,leg wrapping strip [v0.4 deferred: recognizability-first]
+sahib,sa,5,mw,verified,hold,colonial address form [v0.4 deferred: recognizability-first]
+punkah,sa,6,mw,verified,hold,ceiling cloth fan [v0.4 deferred: recognizability-first]
+howdah,sa,6,mw,verified,hold,elephant seat [v0.4 deferred: recognizability-first]
+dekko,sa,5,mw,verified,hold,a look [v0.4 deferred: recognizability-first]
+ayah,sa,4,mw,verified,hold,nursemaid [v0.4 deferred: recognizability-first]
+gunny,sa,5,mw,verified,hold,jute sacking [v0.4 deferred: recognizability-first]
+coir,sa,4,camb,verified,hold,coconut husk fibre [v0.4 deferred: recognizability-first]
+deodar,sa,6,camb,verified,hold,Himalayan cedar [v0.4 deferred: recognizability-first]
+nilgai,sa,6,mw,verified,hold,Indian antelope [v0.4 deferred: recognizability-first]
+chital,sa,6,mw,verified,hold,spotted Indian deer [v0.4 deferred: recognizability-first]
+tola,sa,4,mw,verified,hold,Indian weight unit [v0.4 deferred: recognizability-first]
+ghat,sa,4,camb,verified,hold,riverside steps [v0.4 deferred: recognizability-first]
+maund,sa,5,mw,verified,hold,Indian weight unit [v0.4 deferred: recognizability-first]

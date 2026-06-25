@@ -18,7 +18,6 @@ abortion
 abound
 about
 above
-abrasive
 abroad
 abruptly
 absence
@@ -52,6 +51,7 @@ accused
 accuses
 accusing
 ace
+achar
 ache
 achieve
 achieving
@@ -119,7 +119,6 @@ adobe
 adopted
 adopting
 adoption
-adoptive
 adopts
 adorable
 adore
@@ -170,6 +169,7 @@ african
 afro
 after
 again
+agar
 age
 aggregate
 agile
@@ -181,19 +181,19 @@ agree
 aha
 ahead
 ahem
+ahimsa
 aid
 aikido
-ailments
 aim
 air
 aisle
+ajumma
 akin
 alarm
 alas
 albanian
 albeit
 album
-alchemy
 alcohol
 alert
 algae
@@ -260,7 +260,6 @@ amusing
 analog
 analysed
 analyses
-analysing
 analysis
 analyst
 analytics
@@ -331,7 +330,6 @@ apologise
 apologize
 apology
 apostles
-apostolic
 appalled
 appalling
 apparatus
@@ -378,11 +376,9 @@ arid
 arise
 arising
 ark
-armchair
 armed
 armenian
 armies
-armistice
 armor
 armour
 arms
@@ -499,7 +495,6 @@ augmented
 aunt
 aura
 aurora
-auspices
 aussie
 austerity
 authentic
@@ -536,6 +531,7 @@ axe
 axis
 axle
 aye
+azuki
 azure
 babe
 babies
@@ -583,6 +579,8 @@ banning
 banquet
 bans
 banter
+banyan
+bao
 baptism
 baptist
 baptized
@@ -604,7 +602,6 @@ bass
 bastards
 bastion
 batch
-bathe
 bathing
 bathroom
 baths
@@ -661,7 +658,6 @@ behave
 behaving
 behavior
 behaviour
-beheaded
 behind
 behold
 beige
@@ -690,6 +686,7 @@ besides
 besieged
 best
 beta
+betel
 betrayal
 betrayed
 bets
@@ -699,6 +696,8 @@ between
 beverage
 beware
 beyond
+bhaji
+bhangra
 bias
 bibimbap
 bible
@@ -711,10 +710,16 @@ bike
 biking
 bikini
 bilateral
-bile
 bilingual
 bill
-bin
+binary
+binder
+bindi
+binds
+binge
+bingo
+bingsu
+bins
 biography
 biologist
 biology
@@ -747,7 +752,6 @@ blaze
 blazing
 bleach
 bleak
-bled
 bleeding
 blend
 blessed
@@ -755,7 +759,6 @@ blessing
 blew
 blight
 blind
-bling
 blink
 bliss
 blitz
@@ -776,7 +779,6 @@ blunt
 blur
 blush
 board
-boasted
 boasting
 boasts
 boat
@@ -789,6 +791,7 @@ body
 bogus
 bohemian
 boil
+bokeh
 bold
 bolivia
 bologna
@@ -806,7 +809,8 @@ bony
 boogie
 book
 boom
-boon
+boondocks
+boone
 boost
 booth
 boots
@@ -822,7 +826,6 @@ borrow
 boss
 botanical
 botany
-botched
 both
 bots
 bottle
@@ -946,7 +949,6 @@ bunch
 bundle
 bungalow
 bunker
-bunnies
 bunny
 buns
 burden
@@ -988,15 +990,13 @@ caffeine
 cage
 cairns
 cake
-calamity
 calcium
 calculate
 calculus
 calendar
 calf
 caliber
-calibre
-caliphate
+calico
 called
 caller
 calling
@@ -1027,12 +1027,18 @@ captivity
 captured
 captures
 capturing
+carabao
 caramel
 caravan
 carbon
 carbs
-carcass
-card
+cardamom
+cardboard
+cardiac
+cardiff
+cardinal
+cardio
+cards
 care
 cargo
 caribbean
@@ -1040,7 +1046,6 @@ caring
 carnage
 carnival
 carol
-carousel
 carpenter
 carpet
 carriage
@@ -1061,17 +1066,19 @@ carving
 casa
 cascade
 case
-cash
+cashier
+cashmere
 casing
 casino
 casket
 cassette
+cassowary
 cast
 casual
 catalan
 catalog
 catalyst
-catalytic
+catamaran
 catch
 category
 catering
@@ -1125,10 +1132,7 @@ certified
 cervical
 cessation
 chaebol
-chain
-chaired
-chairman
-chairs
+chai
 chakra
 chalk
 challenge
@@ -1144,6 +1148,7 @@ chanting
 chants
 chaos
 chaotic
+chapati
 chapel
 chaplain
 chapter
@@ -1193,7 +1198,6 @@ chew
 chicken
 chicks
 chief
-chihuahua
 childcare
 childhood
 childish
@@ -1201,9 +1205,11 @@ children
 chile
 chili
 chill
+chimaek
 chimney
 chinatown
 chinese
+chintz
 chip
 chloride
 chlorine
@@ -1219,7 +1225,6 @@ chopped
 chopper
 chopping
 chops
-choral
 chord
 chores
 chorus
@@ -1309,7 +1314,6 @@ clue
 clumsy
 cluster
 clutch
-clutter
 coach
 coal
 coarse
@@ -1422,7 +1426,6 @@ composed
 composer
 composing
 composite
-compost
 compound
 comprised
 comprises
@@ -1443,7 +1446,6 @@ concludes
 concord
 concrete
 condemned
-condemns
 condensed
 condition
 condo
@@ -1531,6 +1533,7 @@ copied
 copies
 coping
 copper
+copra
 cops
 copy
 coral
@@ -1653,7 +1656,6 @@ croatia
 crochet
 crocodile
 crooked
-crooks
 crop
 cross
 crotch
@@ -1710,7 +1712,6 @@ curry
 curse
 cursing
 curtain
-curvature
 curve
 cushion
 cushy
@@ -1722,7 +1723,6 @@ customs
 cut
 cyanide
 cyber
-cyborg
 cycle
 cycling
 cyclists
@@ -1736,6 +1736,7 @@ dad
 daebak
 daft
 dagger
+daikon
 daily
 daimyo
 dairy
@@ -1763,7 +1764,9 @@ dark
 darling
 darn
 dart
-dash
+dashboard
+dashed
+dashi
 data
 date
 dating
@@ -1780,7 +1783,6 @@ deal
 dean
 dear
 death
-debacle
 debate
 debating
 debit
@@ -1827,14 +1829,12 @@ defense
 defensive
 deferred
 defiance
-defiant
 deficient
 deficit
 defined
 defines
 defining
 definite
-deformed
 defunct
 defy
 degraded
@@ -1952,6 +1952,7 @@ devotion
 devout
 dew
 dharma
+dhoti
 diabetes
 diabetic
 diagnosed
@@ -2018,7 +2019,6 @@ dirty
 disabled
 disagree
 disappear
-disarm
 disaster
 disbelief
 discarded
@@ -2102,6 +2102,7 @@ documents
 dodge
 dodging
 dodgy
+doenjang
 does
 dog
 doing
@@ -2193,7 +2194,7 @@ duct
 dude
 due
 duff
-dug
+dugong
 duh
 duke
 dull
@@ -2203,6 +2204,7 @@ dummies
 dummy
 dump
 dunes
+dungaree
 dungeon
 dunk
 duo
@@ -2264,6 +2266,7 @@ ecosystem
 ecstasy
 ecstatic
 ecuador
+edamame
 eddy
 eden
 edge
@@ -2321,7 +2324,6 @@ elite
 elk
 elm
 elongated
-eloquent
 else
 elusive
 elves
@@ -2344,12 +2346,10 @@ emerges
 emerging
 emeritus
 emery
-eminence
 eminent
 emirates
 emissions
 emitted
-emitting
 emoji
 emotional
 emotions
@@ -2373,7 +2373,6 @@ emulate
 enable
 enabling
 enacted
-enactment
 enamel
 enchanted
 enclosed
@@ -2406,8 +2405,8 @@ enhancing
 enigma
 enjoy
 enlarged
-enlighten
 enlisted
+enoki
 enormous
 enough
 enquiries
@@ -2435,7 +2434,6 @@ entropy
 entrusted
 entry
 envelope
-envious
 envoy
 envy
 enzyme
@@ -2460,7 +2458,6 @@ eroded
 erosion
 errands
 erratic
-erroneous
 error
 erupted
 eruption
@@ -2470,7 +2467,6 @@ escaping
 escorted
 escorts
 espionage
-esports
 espresso
 essay
 essence
@@ -2598,7 +2594,6 @@ extremely
 extremes
 extremism
 extremist
-eyeballs
 eyebrows
 eyed
 eyes
@@ -2627,7 +2622,6 @@ falcon
 fall
 false
 fame
-familial
 familiar
 families
 family
@@ -2674,10 +2668,8 @@ feats
 featured
 features
 featuring
-feces
 federal
 feds
-feeble
 feed
 feel
 fees
@@ -2696,7 +2688,6 @@ fencing
 fender
 feral
 fern
-ferocious
 ferry
 fertile
 fertility
@@ -2724,7 +2715,6 @@ fiesta
 fife
 fifteen
 fifth
-fifties
 fifty
 fight
 figs
@@ -2855,7 +2845,6 @@ fracture
 fragile
 fragments
 fragrance
-fragrant
 frail
 frame
 framing
@@ -2884,7 +2873,6 @@ friends
 fries
 fright
 fringe
-frivolous
 frog
 from
 front
@@ -2899,6 +2887,7 @@ fucks
 fudge
 fuel
 fugitive
+fugu
 fulfill
 full
 fumble
@@ -2925,19 +2914,22 @@ gain
 galactic
 galaxies
 galaxy
+galbi
 gale
-gallant
 galleries
 gallery
-galley
 gallon
 gals
 gamble
 gambling
-game
+gamelan
+gameplay
+gamers
+games
 gaming
 gamma
 gang
+ganja
 gap
 garage
 garbage
@@ -2952,12 +2944,10 @@ gate
 gathered
 gathering
 gathers
-gators
 gauge
 gave
 gay
 gaze
-gazing
 gear
 gecko
 gee
@@ -2986,7 +2976,6 @@ genuine
 genus
 geography
 geologic
-geologist
 geology
 geometric
 geometry
@@ -2999,7 +2988,6 @@ ghee
 ghetto
 ghost
 giant
-giddy
 gifs
 gift
 gig
@@ -3058,7 +3046,6 @@ gong
 gonna
 good
 goofy
-goons
 goose
 gore
 gorgeous
@@ -3095,7 +3082,6 @@ grapes
 graphic
 graphite
 graphs
-grappling
 grasp
 grass
 grateful
@@ -3230,7 +3216,6 @@ hats
 haul
 haunted
 haunting
-haunts
 have
 having
 havoc
@@ -3279,6 +3264,7 @@ helmet
 help
 hemp
 hence
+henna
 hens
 hepatitis
 her
@@ -3428,6 +3414,7 @@ identity
 ideology
 idiot
 idle
+idli
 idol
 ignite
 ignition
@@ -3435,6 +3422,7 @@ ignorance
 ignorant
 ignore
 ignoring
+ikat
 ikebana
 ill
 image
@@ -3510,8 +3498,6 @@ incorrect
 increase
 incumbent
 incurred
-indebted
-indecent
 indeed
 index
 indian
@@ -3582,7 +3568,6 @@ innocence
 innocent
 inorganic
 input
-inquest
 inquire
 inquiries
 inquiry
@@ -3669,7 +3654,6 @@ invented
 inventing
 invention
 inventive
-inventors
 inventory
 inverse
 inversion
@@ -3689,7 +3673,6 @@ involving
 inward
 ion
 ipswich
-ire
 irish
 iron
 irregular
@@ -3717,6 +3700,7 @@ ivy
 jab
 jack
 jade
+jaggery
 jaguar
 jail
 jakarta
@@ -3738,7 +3722,6 @@ jelly
 jeopardy
 jerk
 jersey
-jesuit
 jet
 jewellery
 jewelry
@@ -3747,10 +3730,10 @@ jewish
 jews
 jihad
 jimmy
-jingle
 jjigae
 job
 jockey
+jodhpur
 joe
 jogging
 join
@@ -3774,6 +3757,7 @@ judy
 jug
 juice
 juicy
+jujitsu
 july
 jumbo
 jump
@@ -3790,18 +3774,23 @@ just
 jute
 juvenile
 kabuki
+kaiju
 kaiser
 kaizen
 kale
+kanban
 kangaroo
 kanji
 kaolin
+kapok
 kappa
 karaoke
 karate
 karma
 kart
 katana
+katsu
+kawaii
 kayak
 keen
 keep
@@ -3815,7 +3804,6 @@ key
 khaki
 kick
 kidding
-kiddo
 kidnapped
 kidney
 kids
@@ -3824,15 +3812,15 @@ killer
 killing
 kills
 kilograms
-kilometre
 kilos
+kimbap
 kimchi
 kimono
 kinase
 kind
 kinetic
 king
-kink
+kintsugi
 kiss
 kitchen
 kite
@@ -3856,13 +3844,18 @@ known
 knows
 knuckles
 koan
+kofta
 koi
+kombucha
 konglish
 korma
 kosher
+koto
 kowtow
+kris
 kudos
 kumquat
+kurta
 label
 labor
 labour
@@ -3883,6 +3876,7 @@ laid
 lair
 lake
 lakh
+laksa
 lama
 lamb
 lame
@@ -3898,6 +3892,7 @@ large
 larvae
 laser
 lashes
+lassi
 last
 latch
 lately
@@ -3913,7 +3908,6 @@ lattice
 laugh
 launch
 laundry
-laureate
 laurel
 lava
 lavender
@@ -3964,7 +3958,6 @@ let
 leukemia
 level
 leverage
-levied
 levy
 liability
 liable
@@ -4034,14 +4027,19 @@ locating
 location
 loch
 lock
-loco
 lodge
 lodging
 loft
 log
 loki
 lonely
-long
+longan
+longer
+longest
+longevity
+longing
+longitude
+longtime
 look
 loom
 loop
@@ -4050,7 +4048,6 @@ loot
 loquat
 lord
 lore
-lorry
 lose
 losing
 loss
@@ -4059,7 +4056,6 @@ lot
 loud
 lounge
 lousy
-lovable
 love
 loving
 low
@@ -4083,6 +4079,7 @@ lust
 lutheran
 luxurious
 luxury
+lychee
 lying
 lymphoma
 lynch
@@ -4101,9 +4098,9 @@ magnesium
 magnetic
 magnets
 magnitude
-magnolia
 magnum
 maharaja
+mahjong
 mahogany
 maiden
 maids
@@ -4253,8 +4250,7 @@ meek
 meeting
 meets
 mega
-meh
-melee
+mehndi
 mellow
 melodic
 melodies
@@ -4268,7 +4264,6 @@ memoir
 memorable
 memorial
 memories
-memorize
 memory
 men
 meow
@@ -4291,7 +4286,6 @@ message
 messaging
 messed
 messenger
-messes
 messiah
 messing
 messy
@@ -4316,7 +4310,6 @@ migrants
 migrate
 migrating
 migration
-migratory
 mikado
 mild
 mileage
@@ -4332,7 +4325,6 @@ mills
 mimic
 mind
 mine
-mingle
 miniature
 minimal
 minimize
@@ -4353,7 +4345,6 @@ mischief
 miserable
 misery
 misguided
-mislead
 misled
 miso
 misplaced
@@ -4384,6 +4375,7 @@ modular
 module
 moisture
 mojo
+moksha
 mold
 molecular
 molecules
@@ -4415,7 +4407,6 @@ mood
 moon
 moor
 moose
-moot
 mop
 moral
 morbid
@@ -4434,7 +4425,6 @@ moss
 most
 motel
 mother
-moths
 motif
 motion
 motivated
@@ -4483,6 +4473,7 @@ mute
 mutiny
 mutual
 muzzle
+myna
 myriad
 myrtle
 myself
@@ -4491,6 +4482,7 @@ mystery
 mystic
 myth
 naan
+nabe
 nagging
 nah
 nail
@@ -4526,12 +4518,12 @@ navy
 nay
 near
 neat
-nebula
 necessary
 necessity
 neck
 nectar
 need
+neem
 negative
 neglect
 negligent
@@ -4550,7 +4542,6 @@ nets
 netting
 network
 neural
-neurology
 neurons
 neutral
 neutron
@@ -4568,6 +4559,7 @@ nightly
 nightmare
 nights
 nighttime
+nigiri
 nil
 nine
 ninja
@@ -4595,7 +4587,7 @@ nonprofit
 nonsense
 nonstop
 noodles
-noon
+noona
 nope
 noraebang
 nori
@@ -4616,7 +4608,6 @@ nuanced
 nuclear
 nucleus
 nudes
-nudge
 nuggets
 nuisance
 nuke
@@ -4628,7 +4619,6 @@ nun
 nurse
 nursing
 nurture
-nurturing
 nutrients
 nutrition
 nuts
@@ -4642,7 +4632,7 @@ obedience
 obese
 obesity
 obey
-obituary
+obi
 object
 obligated
 obliged
@@ -4699,6 +4689,7 @@ ongoing
 onion
 online
 only
+onsen
 onset
 onstage
 onto
@@ -4799,8 +4790,10 @@ pain
 paired
 pairing
 pairs
+paisa
 paisley
 pajamas
+pakora
 palace
 palate
 pale
@@ -4808,7 +4801,7 @@ palm
 pals
 pamphlet
 pancakes
-panda
+pandan
 pandemic
 paneer
 panel
@@ -4816,11 +4809,8 @@ pangolin
 panic
 panko
 panorama
-panoramic
 pansori
-pantheon
 panthers
-pantry
 pants
 papa
 paper
@@ -4839,12 +4829,13 @@ paranoia
 paranoid
 parasite
 parasitic
+paratha
 parcel
-parchment
 pardon
 parental
 parenting
 parents
+pariah
 parish
 parity
 park
@@ -4858,7 +4849,8 @@ parsons
 part
 pass
 past
-patch
+patches
+patchouli
 patent
 paternal
 paternity
@@ -4953,7 +4945,6 @@ persuade
 pertinent
 pervasive
 pervert
-pesos
 pest
 pet
 pew
@@ -4979,7 +4970,6 @@ piano
 pick
 picnic
 pics
-pictorial
 picture
 piece
 pierce
@@ -5055,8 +5045,6 @@ plenty
 plethora
 plight
 plot
-plow
-ploy
 plug
 plumber
 plumbing
@@ -5079,7 +5067,6 @@ poignant
 point
 poised
 poison
-poked
 pokemon
 poker
 poking
@@ -5159,6 +5146,7 @@ prague
 prairie
 praise
 praising
+prana
 prank
 pratt
 prayed
@@ -5179,7 +5167,6 @@ predicted
 predicts
 preface
 prefer
-prefix
 pregnancy
 pregnant
 prejudice
@@ -5246,13 +5233,11 @@ probable
 probably
 probation
 probe
-probing
 problem
 procedure
 proceed
 process
 proclaim
-proctor
 prodigy
 produced
 producer
@@ -5270,7 +5255,6 @@ progress
 prohibit
 project
 prolific
-prologue
 prolonged
 prominent
 promise
@@ -5286,7 +5270,6 @@ prone
 pronounce
 pronouns
 proof
-propane
 propelled
 propeller
 properly
@@ -5337,17 +5320,15 @@ pubs
 puck
 pudding
 puddle
-pueblo
 puff
 puke
+pukka
 pull
 pulmonary
 pulp
 pulse
-puma
 pump
 punch
-puncture
 pundit
 punished
 punishing
@@ -5363,7 +5344,7 @@ pups
 purchase
 pure
 purge
-purity
+puri
 purple
 purported
 purpose
@@ -5402,7 +5383,6 @@ queer
 queries
 query
 question
-queues
 quicker
 quickest
 quickly
@@ -5435,6 +5415,7 @@ radical
 radio
 radius
 raft
+raga
 rage
 raging
 rags
@@ -5452,16 +5433,18 @@ rainy
 raised
 raises
 raising
+raita
 raja
 rake
 rallied
 rallies
 rally
 rama
-rambling
+rambutan
 ramen
 ramp
 rams
+ramyeon
 ranch
 random
 randy
@@ -5612,6 +5595,7 @@ rehab
 rehearsal
 reigning
 reigns
+reiki
 reindeer
 reinforce
 reins
@@ -5643,7 +5627,6 @@ relied
 relief
 relies
 relieved
-relieving
 religion
 religious
 relish
@@ -5654,7 +5637,6 @@ reluctant
 rely
 remain
 remake
-remanded
 remarked
 remarks
 rematch
@@ -5673,11 +5655,11 @@ removes
 removing
 renal
 renamed
+rendang
 rendered
 rendering
 renders
 rendition
-renegade
 renewable
 renewal
 renewed
@@ -5775,7 +5757,6 @@ reveals
 revenge
 revenue
 revered
-reverence
 reverend
 reversal
 reverse
@@ -5867,6 +5848,7 @@ rotary
 rotate
 rotating
 rotation
+roti
 rotor
 rotten
 rotting
@@ -5887,7 +5869,6 @@ rubbish
 rubble
 rubs
 ruby
-rudd
 rude
 rue
 rugby
@@ -5902,7 +5883,7 @@ rumored
 rumors
 rumours
 run
-rupees
+rupee
 rupture
 rural
 rush
@@ -5911,12 +5892,20 @@ rust
 ruthless
 rye
 ryokan
+saag
 sabbath
 sabotage
 sack
 sacred
 sacrifice
-sad
+saddam
+saddened
+saddest
+saddle
+sadhu
+sadie
+sadly
+sadness
 safari
 safe
 saga
@@ -5924,7 +5913,6 @@ sage
 sago
 saharan
 said
-saigon
 sailed
 sailing
 sailor
@@ -5946,10 +5934,14 @@ salt
 salute
 salvage
 salvation
+samadhi
+sambal
 same
+samosa
 sampan
 sample
 sampling
+samsara
 samurai
 sanctions
 sanctuary
@@ -5960,9 +5952,11 @@ sanitary
 sanity
 sank
 sans
+santoku
 sap
 sarcasm
 sarcastic
+sari
 sarong
 sashimi
 satanic
@@ -5989,7 +5983,9 @@ saviour
 savvy
 saw
 saxon
-say
+saying
+sayonara
+says
 scale
 scaling
 scalp
@@ -6058,7 +6054,6 @@ sears
 seaside
 season
 seat
-seaweed
 secession
 secluded
 second
@@ -6077,8 +6072,6 @@ security
 sedan
 sediment
 seduce
-seduction
-seductive
 seed
 seeing
 seek
@@ -6106,6 +6099,7 @@ semester
 semi
 senate
 senator
+sencha
 send
 senior
 sensation
@@ -6153,7 +6147,6 @@ sewage
 sewer
 sewing
 sexes
-sexiest
 sexism
 sexist
 shabby
@@ -6170,9 +6163,9 @@ shaky
 shale
 shall
 shalt
-shaman
 shame
 shaming
+shamisen
 shampoo
 shanghai
 shape
@@ -6189,6 +6182,7 @@ she
 shiatsu
 shield
 shift
+shiitake
 shine
 shining
 shiny
@@ -6201,7 +6195,7 @@ shitting
 shock
 shoes
 shogun
-shone
+shoji
 shook
 shooter
 shooting
@@ -6214,8 +6208,8 @@ shot
 should
 shout
 shove
-shoving
 show
+shoyu
 shredded
 shrimp
 shrine
@@ -6267,8 +6261,8 @@ sins
 sinus
 sip
 sir
-sissy
 sister
+sitar
 sitcom
 site
 sits
@@ -6313,7 +6307,6 @@ slaughter
 slave
 slayer
 slaying
-sled
 sleek
 sleep
 sleeve
@@ -6335,7 +6328,6 @@ slope
 sloppy
 slot
 slow
-sludge
 slug
 slump
 sly
@@ -6352,7 +6344,6 @@ smoke
 smoking
 smoky
 smooth
-smuggled
 smuggling
 snack
 snag
@@ -6372,6 +6363,7 @@ soaked
 soaking
 soap
 soaring
+soba
 sobbing
 sober
 soccer
@@ -6428,6 +6420,7 @@ sorority
 sorrow
 sorry
 sort
+souchong
 sought
 soul
 sound
@@ -6518,7 +6511,6 @@ spree
 spring
 sprinkle
 sprint
-sprouts
 spruce
 sprung
 spun
@@ -6534,7 +6526,7 @@ squeezing
 squid
 squire
 squirrel
-squirt
+sriracha
 stabbed
 stabbing
 stability
@@ -6606,7 +6598,6 @@ stew
 stick
 stiff
 stigma
-stiles
 still
 stimulate
 stimuli
@@ -6687,6 +6678,7 @@ stung
 stunned
 stunning
 stunt
+stupa
 stupid
 sturdy
 sturgeon
@@ -6735,10 +6727,10 @@ suicidal
 suicide
 suing
 suit
+sukiyaki
 sulfur
 sultan
 summaries
-summarize
 summary
 summed
 summer
@@ -6747,6 +6739,7 @@ summoned
 summons
 sumo
 sums
+sunbae
 sundays
 sunflower
 sung
@@ -6796,9 +6789,11 @@ suspended
 suspense
 suspicion
 sustained
+sutra
 sutton
 sven
 swallow
+swami
 swamp
 swan
 swap
@@ -6839,7 +6834,6 @@ synagogue
 sync
 syndicate
 syndrome
-synergy
 synod
 synopsis
 syntax
@@ -6849,6 +6843,7 @@ syrian
 syringe
 syrup
 system
+tabla
 table
 tabloid
 taboo
@@ -6874,12 +6869,15 @@ talk
 tall
 tame
 tandem
+tandoor
 tangible
 tangled
 tango
 tank
 tanner
 tanning
+tantra
+tanuki
 tao
 tape
 taping
@@ -6890,7 +6888,6 @@ target
 tariffs
 tart
 task
-tasmanian
 taste
 tasting
 tasty
@@ -6903,6 +6900,7 @@ tax
 teacher
 teaches
 teaching
+teak
 teal
 team
 tearing
@@ -6964,7 +6962,6 @@ thieves
 thigh
 thine
 things
-thingy
 think
 thinly
 thinner
@@ -7009,8 +7006,10 @@ tidal
 tide
 tidy
 tie
+tiffin
 tiger
 tight
+tikka
 tile
 till
 tilt
@@ -7038,6 +7037,7 @@ toast
 tobacco
 today
 toddler
+toddy
 toe
 tofu
 together
@@ -7050,7 +7050,6 @@ tolerate
 toll
 tomatoes
 tomb
-tomlinson
 tomorrow
 tone
 tongue
@@ -7064,6 +7063,7 @@ tooth
 top
 torch
 tore
+torii
 torment
 torn
 toro
@@ -7073,7 +7073,6 @@ torrent
 torso
 tortoise
 torture
-torturing
 toss
 total
 tote
@@ -7143,7 +7142,6 @@ trembling
 trench
 trend
 trey
-triad
 trial
 triangle
 triathlon
@@ -7190,6 +7188,7 @@ trust
 truth
 try
 tsunami
+tsundoku
 tube
 tubing
 tubular
@@ -7261,7 +7260,6 @@ unaware
 unbeaten
 unbiased
 unborn
-unbroken
 uncanny
 uncertain
 unchanged
@@ -7280,14 +7278,12 @@ uneven
 unfair
 unfit
 unfold
-unfounded
 unhappy
 unhealthy
 unheard
 unicorn
 unified
 uniform
-uninsured
 union
 unique
 unison
@@ -7312,6 +7308,7 @@ unmarked
 unmarried
 unnamed
 unnatural
+unni
 unnoticed
 unpaid
 unpopular
@@ -7320,19 +7317,16 @@ unrelated
 unrest
 unsafe
 unseen
-unsettled
 unsolved
 unstable
 unsure
 until
-untitled
 unto
 untreated
 untrue
 unused
 unusual
 unveiled
-unveiling
 unwanted
 unwilling
 upbeat
@@ -7400,14 +7394,12 @@ valentine
 valiant
 valid
 valley
-valor
 valuable
 valuation
 value
 valve
 vampire
 van
-vape
 vapor
 variable
 variance
@@ -7485,6 +7477,7 @@ vile
 village
 villain
 villas
+vindaloo
 vine
 vintage
 vinyl
@@ -7501,7 +7494,6 @@ viral
 virgin
 virtual
 virtue
-virtuous
 virus
 visa
 visceral
@@ -7545,6 +7537,7 @@ wade
 waffle
 wage
 wagon
+wagyu
 waited
 waiter
 waiting
@@ -7552,6 +7545,7 @@ waitress
 waits
 waived
 waiver
+wakame
 wake
 waking
 walk
@@ -7565,7 +7559,10 @@ wanna
 want
 war
 wasabi
-wash
+washed
+washer
+washes
+washi
 wasp
 wasted
 wasteful
@@ -7633,7 +7630,6 @@ wherein
 wherever
 whew
 whichever
-whiff
 while
 whilst
 whim
@@ -7653,7 +7649,6 @@ wholesome
 wholly
 whom
 whoops
-whopping
 whores
 why
 wicked
@@ -7668,7 +7663,6 @@ wig
 wiki
 wild
 will
-wilt
 win
 wipe
 wiping
@@ -7732,8 +7726,11 @@ written
 wrong
 wrote
 wrought
+wushu
 yacht
 yahoo
+yakitori
+yakuza
 yang
 yankee
 yard
@@ -7755,12 +7752,15 @@ yield
 yikes
 yin
 yoga
+yogi
 yogurt
 yorker
 you
 yuan
 yummy
 yup
+yuzu
+zazen
 zeal
 zebra
 zen

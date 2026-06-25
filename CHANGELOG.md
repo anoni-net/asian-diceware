@@ -6,6 +6,34 @@
 The format follows [Keep a Changelog](https://keepachangelog.com/), and the
 project aims to follow semantic versioning once it reaches v1.0.
 
+## [0.4.0] — 2026-06-25
+
+### 變更 / Changed
+- **亞洲外來語 pin 擴充 161 → 292（約 7776 的 3.8%）/ Asian-loanword pin expansion
+  161 → 292 (~3.8% of 7776).** 把亞洲特色字的占比往 4% 拉。新詞由分語言的 agent
+  策展、逐字以 MW／Cambridge／OED 線上查證：日語 +28、南亞 +37、韓語 +5、馬來／東南亞
+  +13、粵語 +1，另把 24 個複查存活的 `hold` 升為 pin。每個新詞都過同一關（單一字典
+  token、`[a-z]{3,9}`、prefix-free、無羅馬拼音強變體、非同音、非冒犯）。
+  Agent-sourced, per-word web-verified expansion across Japanese, South Asian,
+  Korean, Malay/SE-Asian, and Chinese, plus 24 re-verified holds promoted.
+- **辨識度優先 / Recognizability-first.** 拉到剛好 4%（311）需納入台灣／華語圈不認得
+  的冷僻詞（殖民時期詞彙、度量衡、罕見動物）。選擇辨識度而非剛好的百分比：pin 入
+  可辨識的詞（食物、文化、瑜伽、樂器），誠實落在 292，把冷僻但有字典背書的詞留作
+  `loanwords_seed.csv` 的 `decision=hold`（日後可再升）。pin 占比不影響密碼熵
+  （12.925 bits/字來自 count=7776＋均勻抽樣＋prefix-free，與詞源無關），只改變辨識度。
+  Hitting a round 4% would require obscure words a Taiwan/Sinophone reader would
+  not recognize, so we kept the obscure-but-verified tail as `hold` and landed
+  honestly at 292. Pin share does not affect passphrase entropy.
+- `validate.py` 的諮詢帶 `PIN_BAND` 由 `(120,180)` 調為 `(250,350)`；版號升至 `0.4.0`。
+  Advisory `PIN_BAND` raised to `(250,350)`; version bumped to `0.4.0`.
+
+### 排除 / Excluded
+- 複查後排除 13 個原 `hold`：`sake`（與英文 for the sake of 同形）、`banzai`／`noh`、
+  `tao`／`ginkgo`／`pakchoi`／`taipan` 等羅馬拼音變體或同形衝突、`amok`（綁在片語 run amok）、
+  以及 `tonkatsu`／`tonkotsu`／`donburi`／`senpai`／`yukata`（非 MW／Cambridge 詞條）。
+  Re-verification excluded 13 former holds on homograph, romanization-variant,
+  phrase-bound, or non-headword grounds.
+
 ## [Unreleased]
 
 ### 新增 / Added

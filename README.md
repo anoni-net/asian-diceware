@@ -24,10 +24,10 @@ drop-in alternative. Six words give about 77.5 bits of entropy.
 
 ### Status
 
-Pre-1.0 (currently v0.3.1). The build pipeline runs end to end; all acceptance
-tests (S1–S8) pass and the external `wla` audit passes. 161 dictionary-verified
-Asian loanwords are pinned, and the 7,776-word frequency fill has been
-quality-hardened (proper nouns, acronyms, and junk removed). See
+Pre-1.0 (currently v0.4). The build pipeline runs end to end; all acceptance
+tests (S1–S8) pass and the external `wla` audit passes. 292 dictionary-verified
+Asian loanwords are pinned (~3.8% of 7776), and the 7,776-word frequency fill has
+been quality-hardened (proper nouns, acronyms, and junk removed). See
 [`SPEC.md`](SPEC.md) §9–§10 for the remaining work toward v1.0.
 
 ### Quick start
@@ -58,7 +58,7 @@ differ only in how many.
 | `7776` | 7,776 (6⁵) | 5 | 12.925 | ~77.5 bits | Real passphrases — EFF-compatible drop-in (**default**) |
 | `1296` | 1,296 (6⁴) | 4 | 10.340 | ~62.0 bits | Tests / demos / teaching; 4-dice simplicity; a shorter card to print |
 
-- **Same recipe.** Each list is the 161 pinned loanwords plus the
+- **Same recipe.** Each list is the 292 pinned loanwords plus the
   highest-frequency fill. Every word in `1296` is also in `7776` — the small
   list just stops sooner (a strict subset).
 - **Use `7776` for anything real.** It reaches the EFF strength target (6 words
@@ -181,25 +181,32 @@ collision between two pinned words fails the build loudly (SPEC §5.1).
 
 ### Featured Asian loanwords
 
-The list pins **161 dictionary-attested Asian loanwords** (verified in OED /
-Merriam-Webster / Cambridge). A selection by origin:
+The list pins **292 dictionary-attested Asian loanwords** (~3.8% of 7776,
+verified in OED / Merriam-Webster / Cambridge). The set was expanded from 161 in
+v0.4 with a recognizability-first rule: prefer words a Taiwan / Sinophone reader
+recognizes, and park obscure-but-verified words as `hold` rather than padding to
+a round 4%. A selection by origin:
 
-- **Japanese (62)** — `sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke`
-  `karate` `judo` `ninja` `samurai` `kimono` `origami` `bonsai` `emoji` `manga`
-  `anime` `tsunami` `zen` `umami` `haiku` `ikebana` `kaizen`.
-- **Korean (25)** — `kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo`
-  `hallyu` `manhwa` `mukbang` `oppa` `aegyo` `daebak` (many entered the OED in
-  its 2021 / 2024 K-culture batches).
-- **Chinese / Mandarin (12)** — `typhoon` `oolong` `ginseng` `qigong` `kowtow`
-  `sampan` `pinyin` `yin` `yang` `pekoe` `kaolin` `boba`.
-- **Cantonese (6)** — `wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam`.
+- **Japanese (102)** — `sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke`
+  `karate` `judo` `ninja` `samurai` `kimono` `origami` `emoji` `manga` `anime`
+  `tsunami` `zen` `umami` `onsen` `dashi` `yakitori` `katsu` `kawaii` `cosplay`
+  `kombucha` `reiki` `shiitake` `yakuza` `kaizen`.
+- **Korean (35)** — `kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo`
+  `hallyu` `manhwa` `mukbang` `oppa` `galbi` `ramyeon` `doenjang` `bingsu`
+  (many entered the OED in its 2021 / 2024 / 2026 K-culture batches).
+- **Chinese / Mandarin (16)** — `typhoon` `oolong` `ginseng` `qigong` `kowtow`
+  `pinyin` `yin` `yang` `boba` `lychee` `mahjong` `wushu` `bao`.
+- **Cantonese (8)** — `wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam`
+  `longan`.
 - **Hokkien / Min-nan (1)** — `ketchup` (yes, it traces back to Hokkien).
-- **South Asian / Sanskrit (31)** — `yoga` `karma` `guru` `mantra` `nirvana`
-  `avatar` `chakra` `mandala` `naan` `biryani` `masala` `ghee` `chutney`
-  `cheetah` `mongoose` `bazaar` `bandanna` `khaki` `pundit`.
-- **Other Asian — Malay / South & SE Asian (24)** — `bamboo` `gong` `curry`
-  `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan`
-  `gecko` `cockatoo` `pangolin` `shampoo` `bungalow` `jungle` `loot` `thug`.
+- **South Asian / Sanskrit (91)** — `yoga` `karma` `guru` `mantra` `nirvana`
+  `avatar` `chakra` `mandala` `naan` `biryani` `masala` `ghee` `chai` `lassi`
+  `samosa` `tikka` `tandoor` `sitar` `sari` `paratha` `pakora` `cashmere`
+  `cardamom` `henna` `cheetah` `mongoose` `bazaar` `pundit`.
+- **Other Asian — Malay / SE Asian (39)** — `bamboo` `gong` `curry` `mango`
+  `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko`
+  `cockatoo` `pangolin` `sriracha` `sambal` `rambutan` `gamelan` `shampoo`
+  `bungalow` `jungle`.
 
 **You may not realize these are Asian loanwords:** `tycoon`, `honcho`,
 `ketchup`, `shampoo`, `bungalow`, `jungle`, `loot`, `thug`, `cushy`, `atoll`,
@@ -236,7 +243,7 @@ common English vocabulary, not a verbatim copy of a copyrighted compilation. See
 
 ### 狀態
 
-Pre-1.0（目前 v0.3.1）。建構 pipeline 端到端可跑，驗收測試 S1–S8 全過，wla 外部稽核通過。已 pin 入 161 個字典查證過的亞洲外來語，7,776 字的頻率填充也經過品質強化（移除專有名詞、縮寫、雜訊）。到 v1.0 的剩餘工作見 [`SPEC.md`](SPEC.md) §9–§10。
+Pre-1.0（目前 v0.4）。建構 pipeline 端到端可跑，驗收測試 S1–S8 全過，wla 外部稽核通過。已 pin 入 292 個字典查證過的亞洲外來語（約占 7776 的 3.8%），7,776 字的頻率填充也經過品質強化（移除專有名詞、縮寫、雜訊）。到 v1.0 的剩餘工作見 [`SPEC.md`](SPEC.md) §9–§10。
 
 ### 快速開始
 
@@ -262,7 +269,7 @@ uv venv && uv pip install -e ".[dev]"
 | `7776` | 7,776（6⁵） | 5 | 12.925 | 約 77.5 bits | 正式密語，EFF 相容的直接替代品（**預設**）|
 | `1296` | 1,296（6⁴） | 4 | 10.340 | 約 62.0 bits | 測試、示範、教學。只要 4 顆骰，清單較短好印 |
 
-- **同一套配方**。每份都是 161 個 pin 的外來語，加上最高頻的填充字。`1296` 裡的每個字也都在 `7776` 裡，小表只是提早收尾，是 `7776` 的子集。
+- **同一套配方**。每份都是 292 個 pin 的外來語，加上最高頻的填充字。`1296` 裡的每個字也都在 `7776` 裡，小表只是提早收尾，是 `7776` 的子集。
 - **正式使用就用 `7776`**。它達到 EFF 的強度目標（六字約 77.5 bits），每字只要 5 顆骰。
 - **`1296` 用熵換體積**。只要 4 顆骰、清單較短好印好看，代價是每組密語要更多字。用 `1296` 大約要 8 個字，才追得上 `7776` 的 6 個字。適合測試、示範、教學。
 - **骰子代碼各檔不同**。同一個字在兩份檔案的代碼不一樣，因為每份依各自的字母順序編號：`tofu` 在 1296 的骰子檔是 `6336`，在 7776 是 `63444`。查表時一定要對到你選的那一份骰子檔。
@@ -344,15 +351,15 @@ python scripts/make_booklet.py --size a5   # 產出 output/asian_diceware_7776_b
 
 ### 特色亞洲字詞
 
-詞表 pin 入 **161 個有字典背書的亞洲外來語**（經 OED／Merriam-Webster／Cambridge 查證）。依語源舉例：
+詞表 pin 入 **292 個有字典背書的亞洲外來語**（約占 7776 的 3.8%，經 OED／Merriam-Webster／Cambridge 查證）。v0.4 從 161 擴充而來，採「辨識度優先」：偏好台灣與華語圈認得的詞，冷僻但有字典背書的詞留作 `hold` 不硬湊整數。依語源舉例：
 
-- **日語（62）**：`sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke` `karate` `judo` `ninja` `samurai` `kimono` `origami` `bonsai` `emoji` `manga` `anime` `tsunami` `zen` `umami` `haiku` `ikebana` `kaizen`。
-- **韓語（25）**：`kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo` `hallyu` `manhwa` `mukbang` `oppa` `aegyo` `daebak`（不少是 OED 2021／2024 韓流批次新增）。
-- **華語／Mandarin（12）**：`typhoon` `oolong` `ginseng` `qigong` `kowtow` `sampan` `pinyin` `yin` `yang` `pekoe` `kaolin` `boba`。
-- **粵語（6）**：`wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam`。
+- **日語（102）**：`sushi` `ramen` `tofu` `miso` `matcha` `bento` `karaoke` `karate` `judo` `ninja` `samurai` `kimono` `origami` `emoji` `manga` `anime` `tsunami` `zen` `umami` `onsen` `dashi` `yakitori` `katsu` `kawaii` `cosplay` `kombucha` `shiitake` `yakuza`。
+- **韓語（35）**：`kimchi` `bibimbap` `bulgogi` `soju` `hangul` `taekwondo` `hallyu` `manhwa` `mukbang` `oppa` `galbi` `ramyeon` `doenjang` `bingsu`（不少是 OED 2021／2024／2026 韓流批次新增）。
+- **華語／Mandarin（16）**：`typhoon` `oolong` `ginseng` `qigong` `kowtow` `pinyin` `yin` `yang` `boba` `lychee` `mahjong` `wushu` `bao`。
+- **粵語（8）**：`wok` `wonton` `hoisin` `kumquat` `loquat` `cheongsam` `longan`。
 - **閩南語／台語（1）**：`ketchup`（沒錯，源頭可追到閩南語）。
-- **南亞／梵語（31）**：`yoga` `karma` `guru` `mantra` `nirvana` `avatar` `chakra` `mandala` `naan` `biryani` `masala` `ghee` `chutney` `cheetah` `mongoose` `bazaar` `bandanna` `khaki` `pundit`。
-- **其他亞洲（馬來／南亞、東南亞等，24）**：`bamboo` `gong` `curry` `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko` `cockatoo` `pangolin` `shampoo` `bungalow` `jungle` `loot` `thug`。
+- **南亞／梵語（91）**：`yoga` `karma` `guru` `mantra` `nirvana` `avatar` `chakra` `naan` `biryani` `masala` `ghee` `chai` `lassi` `samosa` `tikka` `tandoor` `sitar` `sari` `paratha` `pakora` `cashmere` `cardamom` `henna` `cheetah` `mongoose` `bazaar` `pundit`。
+- **其他亞洲（馬來／東南亞等，39）**：`bamboo` `gong` `curry` `mango` `durian` `satay` `batik` `sarong` `rattan` `tempeh` `orangutan` `gecko` `cockatoo` `pangolin` `sriracha` `sambal` `rambutan` `gamelan` `shampoo` `bungalow` `jungle`。
 
 **你可能沒發現這些其實是亞洲外來語**：`tycoon`（大亨）、`honcho`（老大）、`ketchup`、`shampoo`、`bungalow`、`jungle`、`loot`、`thug`、`cushy`、`atoll`、`gecko`、`cheetah`、`gong`、`avatar`、`guru`、`bazaar`、`dinghy`、`mongoose`。
 
